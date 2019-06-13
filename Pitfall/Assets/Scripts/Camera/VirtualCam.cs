@@ -50,7 +50,7 @@ public class VirtualCam : MonoBehaviour
 
     bool AllPlayersVisible()
     {
-        return (aMaxDistance * 1.3 < aVCam.m_Lens.FieldOfView);
+        return (aMaxDistance * 1.2 )< aVCam.m_Lens.FieldOfView;
     }
 
     float HowFastYouDezoom()
@@ -60,7 +60,7 @@ public class VirtualCam : MonoBehaviour
 
     float HowFastYouZoom()
     {
-        return aVCam.m_Lens.FieldOfView / aMaxDistance * 32;
+        return Mathf.Log(aVCam.m_Lens.FieldOfView / aMaxDistance) / 32;
     }
 
     bool AllPlayerClose()
