@@ -16,11 +16,4 @@ public class DebugScript : MonoBehaviour
         aPlayerManager.setVirtualCam();
     }
 
-    private void Update()
-    {
-        aPlayerManager.setPlayerManager(2);
-        aPlayerManager.setNewPlayer("Mage");
-        aPlayerManager.setNewPlayer("Knight");
-        aPlayerManager.setVirtualCam();
-    }
 }

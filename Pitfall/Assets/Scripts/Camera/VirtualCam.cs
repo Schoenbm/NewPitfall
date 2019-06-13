@@ -8,7 +8,7 @@ public class VirtualCam : MonoBehaviour
     public CinemachineVirtualCamera aVCam;
 
     private Transform[] aTransform;
-    private int aNumberPlayers;
+    private int aNumberPlayers = 0;
     private Vector3 PosCameraGauche;
     private Vector3 PosCameraDroite;
     private float aMaxDistance = 0;
@@ -31,9 +31,12 @@ public class VirtualCam : MonoBehaviour
                 }
             }
         }
-        aCenter = vPos / aNumberPlayers;
-        this.transform.position = aCenter;
-
+        if (aNumberPlayers != 0)
+        {
+            aCenter = vPos / aNumberPlayers;
+            this.transform.position = aCenter;
+        }
+ 
         if (AllPlayerClose())
         {
             aVCam.m_Lens.FieldOfView -= HowFastYouZoom();
@@ -47,7 +50,7 @@ public class VirtualCam : MonoBehaviour
 
     bool AllPlayersVisible()
     {
-        return (aMaxDistance < aVCam.m_Lens.FieldOfView);
+        return (aMaxDistance * 1.3 < aVCam.m_Lens.FieldOfView);
     }
 
     float HowFastYouDezoom()
@@ -57,7 +60,7 @@ public class VirtualCam : MonoBehaviour
 
     float HowFastYouZoom()
     {
-        return (Mathf.Log(aVCam.m_Lens.FieldOfView / aMaxDistance) / 16);
+        return aVCam.m_Lens.FieldOfView / aMaxDistance * 32;
     }
 
     bool AllPlayerClose()
