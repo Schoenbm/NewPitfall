@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private Vector3 aInitPosition;
     private Quaternion aInitRotation;
 
+    private int aPercentageDamage;
+
     private void Start()
     {
         aInitPosition = this.transform.position;
