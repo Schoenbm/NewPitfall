@@ -6,15 +6,23 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
     public float speed;
-    public float p_dashTime;
-    public int p_dashForce;
     public bool aMouse;
 
     private bool aTouchGroundPlayer1 = true;
     private bool aTouchGroundPlayer2 = true;
 
 
+    public void MovePlayer(Vector3 pDirection, float pSpeed)
+    {
+        rb.MovePosition(pDirection * pSpeed + rb.position);
+    }
 
+    public void ExpulsePlayer(Vector3 pDirection, float pForce)
+    {
+        pForce = pForce / 10;
+        Debug.Log("Force is" + pForce);
+        rb.AddForce( pDirection* pForce, ForceMode.VelocityChange);
+    }
 
     void Update()
     {
@@ -32,13 +40,6 @@ public class PlayerMovement : MonoBehaviour
             }
             rb.MovePosition(rb.position + vInputDirection * speed);
 
-            //Dash Attack
-
-            if (Input.GetButton("Attack"))
-            {
-                StartCoroutine(Dash(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal")));
-            }
-
         }
 
 
@@ -50,46 +51,7 @@ public class PlayerMovement : MonoBehaviour
             vInputDirection.x = Input.GetAxis("ControllerHorizontal") * speed;
             vInputDirection.z = Input.GetAxis("ControllerVertical") * speed;
             rb.MovePosition(rb.position + vInputDirection);
-
-            //Dash Attack
-
-            if (Input.GetButton("ControllerAttack"))
-            {
-                StartCoroutine(Dash( Input.GetAxis("ControllerVertical"), Input.GetAxis("ControllerHorizontal")));
-            }
         }
-    }
-
-    /*
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Entered");
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-
-
-    void OnCollisionExit(Collision collision)
-    {
-        Debug.Log("Exited");
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-    }
-    */
-
-
-    IEnumerator Dash(float pInputDashZ, float pInputDashX)
-    {
-        Vector3 vInputDashDir = Vector3.zero;
-        vInputDashDir.z = pInputDashZ;
-        vInputDashDir.x = pInputDashX;
-        rb.AddForce(p_dashForce * vInputDashDir * Time.deltaTime, ForceMode.VelocityChange);
-        yield return new WaitForSeconds(p_dashTime);
-        rb.velocity = Vector3.zero;
     }
 
 }

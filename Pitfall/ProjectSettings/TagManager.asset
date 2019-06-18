@@ -5,10 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
-  - Player1
-  - Player2
   - DeathVoid
   - Ground
+  - PlayerData
+  - Player1
   layers:
   - Default
   - TransparentFX
