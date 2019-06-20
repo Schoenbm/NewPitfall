@@ -30,7 +30,7 @@ public abstract class Attack : MonoBehaviour
 
     public abstract void Touch(GameObject pPlayer);
 
-    public abstract void Execute(float pressure_time);
+    public abstract void Execute();
 
     public bool getMoving()
     {

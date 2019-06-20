@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireBallAttack : Attack
 {
+    private GameObject playerAttacking;
     public GameObject fireballPrefab;
     public GameObject Hand;
     public float speed;
@@ -34,7 +35,7 @@ public class FireBallAttack : Attack
             Debug.Log("Player has no PlayerData");
             Debug.Log(pPlayer.tag);
         }
-        else
+        else if(playerAttacking != pPlayer)
         {
             time = TotalTime;
             float ExpulsionCoef = pPlayerData.getExpulsionCoef();
@@ -78,5 +79,10 @@ public class FireBallAttack : Attack
                 setMoving(false);
             }
         }
+    }
+
+    private void Start()
+    {
+        playerAttacking = this.transform.parent.transform.parent.gameObject;
     }
 }
