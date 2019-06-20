@@ -18,6 +18,11 @@ public class CircularAttack : Attack
     private Vector3 newRotation;
     private Vector3 ExpulsionDirection;
 
+    public Vector3 getExpulsionDirection()
+    {
+        return ExpulsionDirection;
+    }
+
     private void Start()
     {
         newRotation = new Vector3(90, 0, 0);
@@ -51,7 +56,6 @@ public class CircularAttack : Attack
         originalHandRot = Hand.transform.localEulerAngles;
         time = 0;
         newPosition = new Vector3(-1,0,0);
-        ActivateHitBox(true);
         setMoving(true);
     }
 
@@ -59,7 +63,7 @@ public class CircularAttack : Attack
     {
         if (getMoving())
         {
-
+            ActivateHitBox(true);
             cosTime = Mathf.Cos((Mathf.PI * time) / TotalTime);
             sinTime = Mathf.Sin((Mathf.PI * time) / TotalTime);
             newPosition.x = sinTime * Radius;
@@ -69,6 +73,7 @@ public class CircularAttack : Attack
             Hand.transform.localEulerAngles = newRotation;
             time += Time.deltaTime;
 
+            
             if ( sinTime < 0)
             {
                 Hand.transform.localPosition = originalHandPos;

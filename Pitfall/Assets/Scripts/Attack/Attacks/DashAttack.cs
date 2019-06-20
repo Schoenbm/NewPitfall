@@ -20,14 +20,6 @@ public class DashAttack : Attack
         aPlayerSpeed = aPlayerMovement.speed;
     }
 
-    /*
-     *     Vector3 vInputDashDir = Vector3.zero;
-        vInputDashDir.z = pInputDashZ;
-        vInputDashDir.x = pInputDashX;
-        rb.AddForce(p_dashForce * vInputDashDir * Time.deltaTime, ForceMode.VelocityChange);
-        yield return new WaitForSeconds(p_dashTime);
-        rb.velocity = Vector3.zero;
-     * */
 
     override 
     public void Touch(GameObject pPlayer)

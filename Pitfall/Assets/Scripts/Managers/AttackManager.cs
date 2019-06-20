@@ -8,6 +8,7 @@ public class AttackManager : MonoBehaviour
 
     private float[] AttacksCds;
     private float[] CurrentAttacksCds;
+    private float[] AttacksPressureTime;
 
     // Start is called before the first frame update
     void Start()
@@ -41,23 +42,22 @@ public class AttackManager : MonoBehaviour
             }
         }
 
-        if (Input.GetButton("Attack") && CurrentAttacksCds[0] <= 0)
+        if (Input.GetButtonDown("Attack") && CurrentAttacksCds[0] <= 0)
         {
             Attacks[0].Execute();
             CurrentAttacksCds[0] = AttacksCds[0];
         }
 
-        if (Input.GetButton("Capacity1") && CurrentAttacksCds[1] <= 0)
+        if (Input.GetButtonDown("Capacity1") && CurrentAttacksCds[1] <= 0)
         {
             Attacks[1].Execute();
             CurrentAttacksCds[1] = AttacksCds[1];
         }
 
-        if (Input.GetButton("Capacity2") && CurrentAttacksCds[2] <= 0)
+        if (Input.GetButtonDown("Capacity2") && CurrentAttacksCds[2] <= 0)
         {
             Attacks[2].Execute();
             CurrentAttacksCds[2] = AttacksCds[2];
         }
-
     }
 }

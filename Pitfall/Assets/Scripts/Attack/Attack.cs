@@ -4,11 +4,24 @@ using UnityEngine;
 
 public abstract class Attack : MonoBehaviour
 {
+    private bool Recast;
     public int Damage;
     public float Cd;
     public float Expulsion;
     private bool IsMoving = false;
+    private bool Canalisation = false;
+
     public AttackHitBox HitBox;
+
+    public bool getCanalisation()
+    {
+        return Canalisation;
+    }
+
+    public void setCanalisation(bool pBool)
+    {
+        Canalisation = pBool;
+    }
 
     public void ActivateHitBox(bool pBool)
     {
@@ -17,7 +30,7 @@ public abstract class Attack : MonoBehaviour
 
     public abstract void Touch(GameObject pPlayer);
 
-    public abstract void Execute();
+    public abstract void Execute(float pressure_time);
 
     public bool getMoving()
     {
