@@ -1154,9 +1154,9 @@ Animator:
   m_GameObject: {fileID: 7242816311818963723}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8058c807ee6958f44874fe5f9b3d7b14, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c44bfee51dc9fc47a58e3b6d54951ab, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -1219,6 +1219,7 @@ MonoBehaviour:
   rb: {fileID: 6388189865025217295}
   speed: 0.3
   aMouse: 1
+  IsWalking: 0
 --- !u!114 &5779295101554096071
 MonoBehaviour:
   m_ObjectHideFlags: 0
