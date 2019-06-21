@@ -14,20 +14,13 @@ public class DashAttack : Attack
     private float CurrentDashTime = 0f;
     private Vector3 DashDirection;
     private Vector3 DashExpulsionDirection;
+
     private void Start()
     {
         aPlayerMovement = Player.GetComponent<PlayerMovement>();
         aPlayerSpeed = aPlayerMovement.speed;
     }
 
-    /*
-     *     Vector3 vInputDashDir = Vector3.zero;
-        vInputDashDir.z = pInputDashZ;
-        vInputDashDir.x = pInputDashX;
-        rb.AddForce(p_dashForce * vInputDashDir * Time.deltaTime, ForceMode.VelocityChange);
-        yield return new WaitForSeconds(p_dashTime);
-        rb.velocity = Vector3.zero;
-     * */
 
     override 
     public void Touch(GameObject pPlayer)

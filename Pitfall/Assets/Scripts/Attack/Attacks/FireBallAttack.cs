@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class FireBallAttack : Attack
 {
+    private GameObject playerAttacking;
     public GameObject fireballPrefab;
+    public GameObject Hand;
+
+    public int damageCoef;
+    public float expulsionCoef;
     public float speed;
     public float TotalTime;
     private float time;
     private GameObject fireball;
     private Rigidbody fireballRb;
-    public int stacks =0;
+    private int stacks =0;
     private Vector3 ExpulsionDirection;
     private Vector3 FireballDirection;
     private AttackHitBox FireballHitBox;
 
-    private void AddStack()
+    private float tempExpulsion;
+    private int tempDamage;
+    public void AddStack()
     {
-        if (stacks == 2)
+        if (stacks == 3)
         {
             return;
         }
@@ -33,34 +40,38 @@ public class FireBallAttack : Attack
             Debug.Log("Player has no PlayerData");
             Debug.Log(pPlayer.tag);
         }
-        else
+        else if (playerAttacking != pPlayer)
         {
             time = TotalTime;
             float ExpulsionCoef = pPlayerData.getExpulsionCoef();
-            pPlayerData.takeDamage(Damage + 5 * stacks);
-            ExpulsionDirection = fireball.transform.position - this.transform.position;
+            pPlayerData.takeDamage(tempDamage);
+            ExpulsionDirection = pPlayer.transform.position - fireball.transform.position;
             ExpulsionDirection = ExpulsionDirection.normalized;
-            pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(ExpulsionDirection, ExpulsionCoef * (Expulsion + 10 * stacks));
+
+            pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(ExpulsionDirection, ExpulsionCoef * tempExpulsion);
         }
     }
-
     override
     public void Execute()
     {
         time = 0;
-        fireball = Instantiate(fireballPrefab, this.transform.position, this.transform.rotation);
+        fireball = Instantiate(fireballPrefab, Hand.transform.position, Hand.transform.rotation);
 
-        Debug.Log("Instantiate" + fireball.transform.position);
         FireballHitBox = fireball.GetComponent<AttackHitBox>();
         fireballRb = fireball.GetComponent<Rigidbody>();
-        FireballDirection = this.transform.forward;
-        fireballRb.velocity = FireballDirection * speed;
+        FireballDirection.x = Mathf.Cos(Hand.transform.eulerAngles.y * Mathf.Deg2Rad);
+        FireballDirection.z = -Mathf.Sin(Hand.transform.eulerAngles.y * Mathf.Deg2Rad);
+        fireballRb.velocity = FireballDirection * (speed - 5 * stacks);
         FireballHitBox.Activate(true);
         FireballHitBox.SetAttack(this);
-        Vector3 vFireballScale = new Vector3(1 + 0.2f * stacks, 1 + 0.2f * stacks, 1 + 0.2f * stacks);
+        Vector3 vFireballScale = new Vector3(1 + 0.5f * stacks, 1 + 0.5f * stacks, 1 + 0.5f * stacks);
         fireball.transform.localScale = vFireballScale;
 
-        setMoving(true);   
+        setMoving(true);
+        Debug.Log("stack = " + stacks);
+        tempDamage = Damage + damageCoef * stacks;
+        tempExpulsion = Expulsion + expulsionCoef * stacks;
+        this.stacks = 0;
     }
 
     // Update is called once per frame
@@ -75,5 +86,10 @@ public class FireBallAttack : Attack
                 setMoving(false);
             }
         }
+    }
+
+    private void Start()
+    {
+        playerAttacking = this.transform.parent.transform.parent.gameObject;
     }
 }
