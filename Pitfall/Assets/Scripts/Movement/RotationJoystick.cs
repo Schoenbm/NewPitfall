@@ -14,8 +14,8 @@ public class RotationJoystick : MonoBehaviour
         vLookTarget.x = Input.GetAxis("ControllerHorizontalRight");
         vLookTarget.z = Input.GetAxis("ControllerVerticalRight");
 
-        float angle = Mathf.Atan2(vLookTarget.x, vLookTarget.z) * Mathf.Rad2Deg;
-        this.transform.eulerAngles = new Vector3(0, angle, 0);
+        float angle = Mathf.Atan2(vLookTarget.z, vLookTarget.x) * Mathf.Rad2Deg;
+        this.transform.eulerAngles = new Vector3(0, angle + 90, 0);
         //Debug.Log(angle);
     }
 }

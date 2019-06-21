@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(pDirection * pSpeed + rb.position);
     }
 
+    public void TpPlayer(Vector3 pDirection, float pDistance)
+    {
+        this.transform.position += pDirection * pDistance;
+    }
+
     public void ExpulsePlayer(Vector3 pDirection, float pForce)
     {
         pForce = pForce / 10;

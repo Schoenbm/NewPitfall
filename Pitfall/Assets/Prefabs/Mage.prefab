@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: 7441375624388690787}
   - {fileID: 911375050175326810}
   - {fileID: 2920073542614198193}
+  IsController: 0
 --- !u!1 &1035166971810209135
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,6 +949,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1190610009}
     m_Modifications:
+    - target: {fileID: 5896455818332966116, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: m_Name
+      value: DashAttackObject
+      objectReference: {fileID: 0}
     - target: {fileID: 5631612423994354232, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1008,11 +1014,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 3984852159921336565}
-    - target: {fileID: 5896455818332966116, guid: d7c9358ad96af4e419069c0b8b40cee1,
-        type: 3}
-      propertyPath: m_Name
-      value: DashAttackObject
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7c9358ad96af4e419069c0b8b40cee1, type: 3}
 --- !u!114 &2920073542614198193 stripped
@@ -1040,16 +1041,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1190610009}
     m_Modifications:
-    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
-      propertyPath: Hand
-      value: 
-      objectReference: {fileID: 3711127508900695539}
-    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: playerAttacking
-      value: 
-      objectReference: {fileID: 3984852159921336565}
+      propertyPath: m_Name
+      value: FireBallAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 1436631998518252822, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1105,10 +1101,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
-      propertyPath: m_Name
-      value: FireBallAttack
+      propertyPath: Hand
+      value: 
+      objectReference: {fileID: 3711127508900695539}
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: playerAttacking
+      value: 
+      objectReference: {fileID: 3984852159921336565}
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: Damage
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: Expulsion
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2fd6cb7620ecc7458f71bc671427a95, type: 3}
@@ -1137,6 +1148,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 796727754036092556}
     m_Modifications:
+    - target: {fileID: 712566244114837126, guid: e49c5b55f3bb10945905280356238c5c,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 8300878300618579767, guid: e49c5b55f3bb10945905280356238c5c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1197,11 +1213,6 @@ PrefabInstance:
       propertyPath: OriginAttack
       value: 
       objectReference: {fileID: 7441375624388690787}
-    - target: {fileID: 712566244114837126, guid: e49c5b55f3bb10945905280356238c5c,
-        type: 3}
-      propertyPath: m_Name
-      value: Sword
-      objectReference: {fileID: 0}
     - target: {fileID: 5444222242891591792, guid: e49c5b55f3bb10945905280356238c5c,
         type: 3}
       propertyPath: m_IsTrigger

@@ -5,10 +5,11 @@ using UnityEngine;
 public class AttackManager : MonoBehaviour
 {
     public Attack[] Attacks;
-
+    public bool IsController;
     private float[] AttacksCds;
     private float[] CurrentAttacksCds;
     private float[] AttacksPressureTime;
+    private string[] ButtonsName;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class AttackManager : MonoBehaviour
         int i = Attacks.Length;
         AttacksCds = new float[i];
         CurrentAttacksCds = new float[i];
+        ButtonsName = new string[i];
 
         if (i == 3)
         {
@@ -28,6 +30,20 @@ public class AttackManager : MonoBehaviour
         else
         {
             Debug.Log("error, not enough attacks");
+        }
+
+        if (IsController)
+        {
+            Debug.Log("ControllerSet");
+            ButtonsName[0] = "ControllerAttack";
+            ButtonsName[1] = "ControllerCapacity1";
+            ButtonsName[2] = "ControllerCapacity2";
+        }
+        else
+        {
+            ButtonsName[0] = "Attack";
+            ButtonsName[1] = "Capacity1";
+            ButtonsName[2] = "Capacity2";
         }
     }
 
@@ -42,22 +58,25 @@ public class AttackManager : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Attack") && CurrentAttacksCds[0] <= 0)
+        for (int k = 0; k < 3; k++)
         {
-            Attacks[0].Execute();
-            CurrentAttacksCds[0] = AttacksCds[0];
+            if (this.GetButtonDown(ButtonsName[k]) && CurrentAttacksCds[k] <= 0)
+            {
+                Attacks[k].Execute();
+                CurrentAttacksCds[k] = AttacksCds[k];
+            }
         }
+    }
 
-        if (Input.GetButtonDown("Capacity1") && CurrentAttacksCds[1] <= 0)
+    bool GetButtonDown(string pButtonName)
+    {
+        if (pButtonName == "ControllerAttack" || pButtonName == "ControllerCapacity1")
         {
-            Attacks[1].Execute();
-            CurrentAttacksCds[1] = AttacksCds[1];
+            return (Input.GetAxis(pButtonName) > 0);
         }
-
-        if (Input.GetButtonDown("Capacity2") && CurrentAttacksCds[2] <= 0)
+        else
         {
-            Attacks[2].Execute();
-            CurrentAttacksCds[2] = AttacksCds[2];
+            return Input.GetButtonDown(pButtonName);
         }
     }
 }

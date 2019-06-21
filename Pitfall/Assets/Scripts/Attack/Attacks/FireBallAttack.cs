@@ -7,6 +7,9 @@ public class FireBallAttack : Attack
     private GameObject playerAttacking;
     public GameObject fireballPrefab;
     public GameObject Hand;
+
+    public int damageCoef;
+    public float expulsionCoef;
     public float speed;
     public float TotalTime;
     private float time;
@@ -17,9 +20,11 @@ public class FireBallAttack : Attack
     private Vector3 FireballDirection;
     private AttackHitBox FireballHitBox;
 
+    private float tempExpulsion;
+    private int tempDamage;
     public void AddStack()
     {
-        if (stacks == 2)
+        if (stacks == 3)
         {
             return;
         }
@@ -35,17 +40,17 @@ public class FireBallAttack : Attack
             Debug.Log("Player has no PlayerData");
             Debug.Log(pPlayer.tag);
         }
-        else if(playerAttacking != pPlayer)
+        else if (playerAttacking != pPlayer)
         {
             time = TotalTime;
             float ExpulsionCoef = pPlayerData.getExpulsionCoef();
-            pPlayerData.takeDamage(Damage + 5 * stacks);
-            ExpulsionDirection = fireball.transform.position - this.transform.position;
+            pPlayerData.takeDamage(tempDamage);
+            ExpulsionDirection = pPlayer.transform.position - fireball.transform.position;
             ExpulsionDirection = ExpulsionDirection.normalized;
-            pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(ExpulsionDirection, ExpulsionCoef * (Expulsion + 10 * stacks));
+
+            pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(ExpulsionDirection, ExpulsionCoef * tempExpulsion);
         }
     }
-
     override
     public void Execute()
     {
@@ -64,6 +69,8 @@ public class FireBallAttack : Attack
 
         setMoving(true);
         Debug.Log("stack = " + stacks);
+        tempDamage = Damage + damageCoef * stacks;
+        tempExpulsion = Expulsion + expulsionCoef * stacks;
         this.stacks = 0;
     }
 

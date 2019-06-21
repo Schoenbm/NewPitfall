@@ -43,12 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e77b4521f5a10c4cad3495537e88ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 18
+  Damage: 15
   Cd: 3
-  Expulsion: 25
+  Expulsion: 20
   HitBox: {fileID: 0}
   fireballPrefab: {fileID: 7175563684417054062, guid: 739ba428b2d71614bbd0f58fac0c7d47,
     type: 3}
   Hand: {fileID: 0}
+  damageCoef: 5
+  expulsionCoef: 15
   speed: 30
   TotalTime: 3
