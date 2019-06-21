@@ -5,23 +5,28 @@ using UnityEngine;
 public class TpAttack : Attack
 {
     private GameObject playerAttacking;
-    public int Distance;
+    public int MaxDistance;
+    private float Distance;
     public float timeBeforeTp;
+    public int rotationSpeed;
     private float time;
 
-    private float HaloMaxScale;
-    private float HaloTime;
+    public GameObject HaloPrefab;
+    private GameObject Halo;
+    public float HaloMaxScale;
+    public float HaloTime;
 
     private Vector3 ExpulsionDirection;
     private Vector3 TpDirection;
-
-    private bool IsMoving;
+    
     private bool DidTp = false;
 
-    public AttackHitBox Halo;
+    private AttackHitBox HaloHitBox;
+
     // Start is called before the first frame update
     void Start()
     {
+        HaloMaxScale = HaloMaxScale - 1;
         TpDirection = new Vector3();
         playerAttacking = this.transform.parent.transform.parent.gameObject;
     }
@@ -47,34 +52,56 @@ public class TpAttack : Attack
 
     public void Tp()
     {
-        DidTp = true;
-        HitBox = Instantiate(Halo, this.transform.position, this.transform.rotation);
         float yAngle = this.gameObject.transform.eulerAngles.y * Mathf.Deg2Rad;
         TpDirection = new Vector3(Mathf.Sin(yAngle), 0, Mathf.Cos(yAngle));
+
+        Ray ray = new Ray(transform.position, TpDirection);
+        RaycastHit vRaycastHit;
+        float vDistance = 30;
+
+        if (Physics.Raycast(ray, out vRaycastHit))
+        {
+            if (vRaycastHit.collider.tag == "Wall")
+            {
+                Debug.Log("TouchWall");
+                vDistance = (vRaycastHit.transform.position - this.transform.position).magnitude - 3;
+                Debug.Log(vDistance);
+            }
+        }
+        Distance = Mathf.Min(vDistance, MaxDistance);
         playerAttacking.GetComponent<PlayerMovement>().TpPlayer(TpDirection, Distance);
+        DidTp = true;
+        Halo = Instantiate(HaloPrefab, this.transform);
+        Halo.transform.localScale= new Vector3(0,0,0);
+        Halo.transform.eulerAngles = new Vector3(90,0,0);
+        HitBox = Halo.GetComponent<AttackHitBox>();
+        HitBox.SetAttack(this);
+        HitBox.Activate(true);
     }
 
     override
     public void Execute()
     {
-        IsMoving = true;
+        setMoving(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsMoving)
+        if (getMoving())
         {
             if(time> timeBeforeTp + HaloTime)
             {
                 time = 0;
-                IsMoving = false;
+                setMoving(false);
                 DidTp = false;
-                Destroy(HitBox);
+                Destroy(Halo);
             }
             else if (DidTp)
             {
-                Halo.transform.localScale = new Vector3(vFactor + 1, 1, vFactor + 1);
+                float vFactor = (HaloMaxScale * ( time - timeBeforeTp)) / HaloTime ;
+                Halo.transform.localScale = new Vector3(vFactor, vFactor, 1);
+                Halo.transform.localEulerAngles+= new Vector3(0, rotationSpeed, 0);
             }
             else if(time > timeBeforeTp)
             {

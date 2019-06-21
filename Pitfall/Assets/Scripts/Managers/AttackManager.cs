@@ -11,6 +11,9 @@ public class AttackManager : MonoBehaviour
     private float[] AttacksPressureTime;
     private string[] ButtonsName;
 
+    private bool tempBoolDownput;
+    private bool tempBoolCd;
+    private bool tempBoolInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,10 +63,22 @@ public class AttackManager : MonoBehaviour
 
         for (int k = 0; k < 3; k++)
         {
-            if (this.GetButtonDown(ButtonsName[k]) && CurrentAttacksCds[k] <= 0)
+            tempBoolCd = CurrentAttacksCds[k] <= 0;
+            tempBoolInput = this.GetButtonDown(ButtonsName[k]);
+            tempBoolDownput = this.GetButtonUp(ButtonsName[k]);
+;            if (tempBoolInput && tempBoolCd && ! Attacks[k].getCanalisation())
             {
                 Attacks[k].Execute();
                 CurrentAttacksCds[k] = AttacksCds[k];
+            }
+            else if(tempBoolDownput && tempBoolCd)
+            {
+                AttacksPressureTime[k] += Time.deltaTime;
+            }
+            else if(tempBoolInput && s)
+            else if (tempBoolInput && !tempBoolCd && Attacks[k].getRecast())
+            {
+                Attacks[k].setRecast(true);
             }
         }
     }
@@ -77,6 +92,18 @@ public class AttackManager : MonoBehaviour
         else
         {
             return Input.GetButtonDown(pButtonName);
+        }
+    }
+
+    bool GetButtonUp(string pButtonName)
+    {
+        if (pButtonName == "ControllerAttack" || pButtonName == "ControllerCapacity1")
+        {
+            return (Input.GetAxis(pButtonName) < 1);
+        }
+        else
+        {
+            return Input.GetButtonUp(pButtonName);
         }
     }
 }
