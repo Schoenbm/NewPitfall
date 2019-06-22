@@ -88,8 +88,11 @@ public class TpAttack : Attack
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Tp update");
+        Debug.Log("Get moving :" + getMoving());
         if (getMoving())
         {
+            Debug.Log("Tp moving");
             if(time> timeBeforeTp + HaloTime)
             {
                 time = 0;

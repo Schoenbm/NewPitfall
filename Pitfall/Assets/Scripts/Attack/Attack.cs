@@ -9,7 +9,7 @@ public abstract class Attack : MonoBehaviour
     public int Damage;
     public float Cd;
     public float Expulsion;
-    private bool IsMoving = false;
+    private bool IsMoving;
     private bool Canalisation = false;
 
     public AttackHitBox HitBox;
