@@ -12,7 +12,20 @@ public abstract class Attack : MonoBehaviour
     private bool IsMoving = false;
     private bool Canalisation = false;
 
+    public AudioSource LaunchingSe;
+    public AudioSource TouchingSe;
     public AttackHitBox HitBox;
+
+    public void playLaunchSe()
+    {
+        LaunchingSe.Play();
+    }
+
+    public void playTouchingSe()
+    {
+        TouchingSe.Play();
+    }
+
 
     public bool getCanalisation()
     {

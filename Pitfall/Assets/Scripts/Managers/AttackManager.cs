@@ -68,6 +68,7 @@ public class AttackManager : MonoBehaviour
             {
                 Attacks[k].Execute();
                 CurrentAttacksCds[k] = AttacksCds[k];
+                Attacks[k].playLaunchSe();
             }
             else if(!tempBoolInput && Attacks[k].getCanalisation())
             {
