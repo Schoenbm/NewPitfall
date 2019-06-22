@@ -65,6 +65,8 @@ public class CircularAttack : Attack
     {
         if (getMoving())
         {
+
+            Debug.Log("Attaque circulaire");
             ActivateHitBox(true);
             cosTime = Mathf.Cos((Mathf.PI * time) / TotalTime);
             sinTime = Mathf.Sin((Mathf.PI * time) / TotalTime);

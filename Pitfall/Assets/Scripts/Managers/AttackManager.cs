@@ -43,6 +43,7 @@ public class AttackManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("ButtonSet");
             ButtonsName[0] = "Attack";
             ButtonsName[1] = "Capacity1";
             ButtonsName[2] = "Capacity2";
@@ -52,6 +53,8 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log("In Update AttackManager");
         for (int k = 0; k < 3; k++)
         {
             if (CurrentAttacksCds[k] > 0)

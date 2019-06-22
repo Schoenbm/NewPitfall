@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MageStack : CircularAttack
 {
-    public FireBallAttack FireBall;
+    public FireBallAttack FireBallAttackOfPlayer;
     private Vector3 StackedExpulsionDirection;
 
     override
@@ -18,7 +18,7 @@ public class MageStack : CircularAttack
         }
         else
         {
-            this.FireBall.AddStack();
+            this.FireBallAttackOfPlayer.AddStack();
             float ExpulsionCoef = pPlayerData.getExpulsionCoef();
             pPlayerData.takeDamage(Damage);
             StackedExpulsionDirection = Hand.transform.position - this.transform.position;

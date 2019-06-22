@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public bool aMouse;
     public bool IsWalking = false;
-    Animator aAnimator;
+    //Animator aAnimator;
 
     private bool aTouchGroundPlayer1 = true;
     private bool aTouchGroundPlayer2 = true;
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Start()
     {
-        aAnimator = GetComponent<Animator>();
+        //aAnimator = GetComponent<Animator>();
     }
 
     public void MovePlayer(Vector3 pDirection, float pSpeed)
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             bool hasHorizontalInput = !Mathf.Approximately(vInputDirection.x, 0f);
             bool hasVerticalInput = !Mathf.Approximately(vInputDirection.z, 0f);
             IsWalking = hasHorizontalInput || hasVerticalInput;
-            aAnimator.SetBool("IsWalking", IsWalking);
+            //aAnimator.SetBool("IsWalking", IsWalking);
 
             if (vInputDirection.magnitude > 1)
             {
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             bool hasHorizontalInput = !Mathf.Approximately(vInputDirection.x, 0f);
             bool hasVerticalInput = !Mathf.Approximately(vInputDirection.z, 0f);
             IsWalking = hasHorizontalInput || hasVerticalInput;
-            aAnimator.SetBool("IsWalking", IsWalking);
+            //aAnimator.SetBool("IsWalking", IsWalking);
 
             rb.MovePosition(rb.position + vInputDirection);
         }
