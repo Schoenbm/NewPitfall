@@ -33,7 +33,7 @@ public abstract class Attack : MonoBehaviour
 
     public abstract void Execute();
     
-    public void ExecuteTimer(float pTimer) { }
+    public void ExecuteTimer() { }
 
     public bool getMoving()
     {
