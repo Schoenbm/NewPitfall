@@ -13,6 +13,7 @@ public class AttackHitBox : MonoBehaviour
         {
             Debug.Log("Touch Player");
             OriginAttack.Touch(other.gameObject);
+            OriginAttack.playTouchingSe();
         }
     }
 
