@@ -11,7 +11,6 @@ public class AttackManager : MonoBehaviour
     private float[] AttacksPressureTime;
     private string[] ButtonsName;
 
-    private bool tempBoolDownput;
     private bool tempBoolCd;
     private bool tempBoolInput;
     // Start is called before the first frame update
@@ -65,18 +64,17 @@ public class AttackManager : MonoBehaviour
         {
             tempBoolCd = CurrentAttacksCds[k] <= 0;
             tempBoolInput = this.GetButtonDown(ButtonsName[k]);
-            tempBoolDownput = this.GetButtonUp(ButtonsName[k]);
-;            if (tempBoolInput && tempBoolCd && ! Attacks[k].getCanalisation())
+;            if (tempBoolInput && tempBoolCd)
             {
                 Attacks[k].Execute();
                 CurrentAttacksCds[k] = AttacksCds[k];
             }
-            else if(tempBoolDownput && tempBoolCd)
+            else if(!tempBoolInput && Attacks[k].getCanalisation())
             {
-                AttacksPressureTime[k] += Time.deltaTime;
+                Attacks[k].setCanalisation(false);
+                Attacks[k].ExecuteTimer();
             }
-            else if(tempBoolInput && s)
-            else if (tempBoolInput && !tempBoolCd && Attacks[k].getRecast())
+            else if (tempBoolInput && !tempBoolCd && Attacks[k].getCanRecast())
             {
                 Attacks[k].setRecast(true);
             }
