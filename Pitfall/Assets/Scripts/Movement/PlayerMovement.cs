@@ -9,16 +9,10 @@ public class PlayerMovement : MonoBehaviour
     public AttackManager playerAttackManager;
     public float speed;
     public bool aMouse;
-    //<<<<<<< Updated upstream
-    //=======
+
     public bool IsWalking = false;
     private float timeExpulsed;
     Animator playerAnimator;
-    //>>>>>>> Stashed changes
-
-    private bool aTouchGroundPlayer1 = true;
-    private bool aTouchGroundPlayer2 = true;
-
 
     //<<<<<<< Updated upstream
     //=======
@@ -27,8 +21,6 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         timeExpulsed = 0f;
     }
-
-    //>>>>>>> Stashed changes
     public void MovePlayer(Vector3 pDirection, float pSpeed)
     {
         rb.MovePosition(pDirection * pSpeed + rb.position);
@@ -43,11 +35,11 @@ public class PlayerMovement : MonoBehaviour
     {
         pForce = pForce / 10;
         Debug.Log("Force is" + pForce);
-        rb.AddForce( pDirection* pForce, ForceMode.VelocityChange);
+        rb.AddForce(pDirection * pForce, ForceMode.VelocityChange);
 
         float angle = Mathf.Atan2(pDirection.x, pDirection.z) * Mathf.Rad2Deg;
 
-        if ( pForce > 150)
+        if (pForce > 150)
         {
             timeExpulsed = 1.5f;
             this.playerRotation.setRotationOn(false);
@@ -71,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             timeExpulsed = 0.8f;
             this.playerAnimator.SetBool("Expulsed", true);
         }
-        else if(pForce > 25f)
+        else if (pForce > 25f)
         {
             this.playerRotation.setRotationOn(false);
             this.transform.eulerAngles = new Vector3(0, angle - 90, 0);
@@ -83,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-//----------------clavier--------------------------------------------------
+        //----------------clavier--------------------------------------------------
 
         if (aMouse)
         {
@@ -105,9 +97,7 @@ public class PlayerMovement : MonoBehaviour
             }
             rb.MovePosition(rb.position + vInputDirection * speed);
         }
-
-
-// ------------------Manette-----------------------------------------------
+        // ------------------Manette-----------------------------------------------
         //Mouvement de base
         if (!aMouse)
         {

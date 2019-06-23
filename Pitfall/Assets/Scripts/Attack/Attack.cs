@@ -55,7 +55,7 @@ public abstract class Attack : MonoBehaviour
     public abstract void Touch(GameObject pPlayer);
 
     public abstract void Execute();
-    
+
     public void ExecuteTimer() { }
 
     public bool getMoving()

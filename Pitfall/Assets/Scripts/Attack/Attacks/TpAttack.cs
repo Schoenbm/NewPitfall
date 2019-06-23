@@ -18,7 +18,7 @@ public class TpAttack : Attack
 
     private Vector3 ExpulsionDirection;
     private Vector3 TpDirection;
-    
+
     private bool DidTp = false;
 
     private AttackHitBox HaloHitBox;
@@ -74,8 +74,8 @@ public class TpAttack : Attack
         playerAttacking.GetComponent<PlayerMovement>().TpPlayer(TpDirection, Distance);
         DidTp = true;
         Halo = Instantiate(HaloPrefab, this.transform);
-        Halo.transform.localScale= new Vector3(0,0,0);
-        Halo.transform.eulerAngles = new Vector3(90,0,0);
+        Halo.transform.localScale = new Vector3(0, 0, 0);
+        Halo.transform.eulerAngles = new Vector3(90, 0, 0);
         HitBox = Halo.GetComponent<AttackHitBox>();
         HitBox.SetAttack(this);
         HitBox.Activate(true);
@@ -94,7 +94,7 @@ public class TpAttack : Attack
     {
         if (getMoving())
         {
-            if(time> timeBeforeTp + HaloTime)
+            if (time > timeBeforeTp + HaloTime)
             {
                 time = 0;
                 setMoving(false);
@@ -103,11 +103,11 @@ public class TpAttack : Attack
             }
             else if (DidTp)
             {
-                float vFactor = (HaloMaxScale * ( time - timeBeforeTp)) / HaloTime ;
+                float vFactor = (HaloMaxScale * (time - timeBeforeTp)) / HaloTime;
                 Halo.transform.localScale = new Vector3(vFactor, vFactor, 1);
-                Halo.transform.localEulerAngles+= new Vector3(0, rotationSpeed, 0);
+                Halo.transform.localEulerAngles += new Vector3(0, rotationSpeed, 0);
             }
-            else if(time > timeBeforeTp)
+            else if (time > timeBeforeTp)
             {
                 Tp();
             }

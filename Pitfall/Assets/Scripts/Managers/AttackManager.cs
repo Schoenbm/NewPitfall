@@ -31,7 +31,7 @@ public class AttackManager : MonoBehaviour
 
         if (i == 3)
         {
-            for(int k = 0; k < 3; k++)
+            for (int k = 0; k < 3; k++)
             {
                 AttacksCds[k] = Attacks[k].Cd;
                 CurrentAttacksCds[k] = 1;
@@ -60,14 +60,10 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-//<<<<<<< Updated upstream
-//=======
         if (!canAttack)
         {
             return;
         }
-
-//>>>>>>> Stashed changes
         for (int k = 0; k < 3; k++)
         {
             if (CurrentAttacksCds[k] > 0)
@@ -80,12 +76,12 @@ public class AttackManager : MonoBehaviour
         {
             tempBoolCd = CurrentAttacksCds[k] <= 0;
             tempBoolInput = this.GetButtonDown(ButtonsName[k]);
-;            if (tempBoolInput && tempBoolCd)
+            ; if (tempBoolInput && tempBoolCd)
             {
                 Attacks[k].Execute();
                 CurrentAttacksCds[k] = AttacksCds[k];
             }
-            else if(!tempBoolInput && Attacks[k].getCanalisation())
+            else if (!tempBoolInput && Attacks[k].getCanalisation())
             {
                 Attacks[k].setCanalisation(false);
                 Attacks[k].ExecuteTimer();

@@ -18,7 +18,7 @@ public class FireBallAttack : Attack
     private float time;
     private GameObject fireball;
     private Rigidbody fireballRb;
-    private int stacks =0;
+    private int stacks = 0;
     private Vector3 ExpulsionDirection;
     private Vector3 FireballDirection;
     private AttackHitBox FireballHitBox;
@@ -37,7 +37,7 @@ public class FireBallAttack : Attack
         {
             return;
         }
-        stacks++;        
+        stacks++;
     }
 
     override
@@ -110,7 +110,7 @@ public class FireBallAttack : Attack
     {
         if (DuringAnimation)
         {
-            if(time > animationTime)
+            if (time > animationTime)
             {
                 setMoving(true);
                 DuringAnimation = false;
