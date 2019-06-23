@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private float timeExpulsed;
     Animator playerAnimator;
 
+    //<<<<<<< Updated upstream
+    //=======
     public void Start()
     {
         playerAnimator = GetComponent<Animator>();
@@ -81,19 +83,20 @@ public class PlayerMovement : MonoBehaviour
             vInputDirection.x = Input.GetAxis("Horizontal");
             vInputDirection.z = Input.GetAxis("Vertical");
 
+            //<<<<<<< Updated upstream
+            //=======
             bool hasHorizontalInput = !Mathf.Approximately(vInputDirection.x, 0f);
             bool hasVerticalInput = !Mathf.Approximately(vInputDirection.z, 0f);
             IsWalking = hasHorizontalInput || hasVerticalInput;
             playerAnimator.SetBool("Run", IsWalking);
 
+            //>>>>>>> Stashed changes
             if (vInputDirection.magnitude > 1)
             {
                 vInputDirection.Normalize();
             }
             rb.MovePosition(rb.position + vInputDirection * speed);
         }
-
-
         // ------------------Manette-----------------------------------------------
         //Mouvement de base
         if (!aMouse)
@@ -102,11 +105,14 @@ public class PlayerMovement : MonoBehaviour
             vInputDirection.x = Input.GetAxis("ControllerHorizontal") * speed;
             vInputDirection.z = Input.GetAxis("ControllerVertical") * speed;
 
+            //<<<<<<< Updated upstream
+            //=======
             bool hasHorizontalInput = !Mathf.Approximately(vInputDirection.x, 0f);
             bool hasVerticalInput = !Mathf.Approximately(vInputDirection.z, 0f);
             IsWalking = hasHorizontalInput || hasVerticalInput;
             playerAnimator.SetBool("Run", IsWalking);
 
+            //>>>>>>> Stashed changes
             rb.MovePosition(rb.position + vInputDirection);
         }
 
