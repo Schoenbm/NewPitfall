@@ -319,7 +319,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615034451794206110}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 1.6871829, z: 0.0000002266879}
+  m_LocalPosition: {x: 0, y: 1.6871829, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1435452246156440924}
@@ -1832,6 +1832,11 @@ PrefabInstance:
       propertyPath: FireBall
       value: 
       objectReference: {fileID: 3156188681363250118}
+    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+        type: 3}
+      propertyPath: PlayerAnimator
+      value: 
+      objectReference: {fileID: -4577162346695793155}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e, type: 3}
 --- !u!4 &1640587356755791303 stripped

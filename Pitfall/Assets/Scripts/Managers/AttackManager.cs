@@ -64,7 +64,6 @@ public class AttackManager : MonoBehaviour
         {
             return;
         }
-
         for (int k = 0; k < 3; k++)
         {
             if (CurrentAttacksCds[k] > 0)

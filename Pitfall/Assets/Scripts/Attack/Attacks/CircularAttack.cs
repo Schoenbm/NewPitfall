@@ -46,7 +46,8 @@ public class CircularAttack : Attack
             float ExpulsionCoef = pPlayerData.getExpulsionCoef();
             pPlayerData.takeDamage(Damage);
             ExpulsionDirection = Hand.transform.position - this.transform.position;
-            ExpulsionDirection = ExpulsionDirection / Radius;
+            ExpulsionDirection.y = 0;
+            ExpulsionDirection = ExpulsionDirection.normalized;
             pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(ExpulsionDirection, ExpulsionCoef * Expulsion);
         }
     }
@@ -54,6 +55,7 @@ public class CircularAttack : Attack
     override
     public void Execute()
     {
+        playLaunchSe();
         originalHandPos = Hand.transform.localPosition;
         originalHandRot = Hand.transform.localEulerAngles;
         time = 0;
@@ -65,8 +67,6 @@ public class CircularAttack : Attack
     {
         if (getMoving())
         {
-
-            Debug.Log("Attaque circulaire");
             ActivateHitBox(true);
             cosTime = Mathf.Cos((Mathf.PI * time) / TotalTime);
             sinTime = Mathf.Sin((Mathf.PI * time) / TotalTime);
