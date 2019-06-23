@@ -65,7 +65,7 @@ public class VirtualCam : MonoBehaviour
 
     bool AllPlayerClose()
     {
-        if (aVCam.m_Lens.FieldOfView < 22)
+        if (aVCam.m_Lens.FieldOfView < 32)
         {
             return false;
         }
