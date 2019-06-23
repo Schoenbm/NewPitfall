@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Attack : MonoBehaviour
 {
+    public Animator PlayerAnimator;
     private bool CanRecast;
     private bool Recast;
     public int Damage;
@@ -26,6 +27,10 @@ public abstract class Attack : MonoBehaviour
         TouchingSe.Play();
     }
 
+    public AudioSource getTouchingSe()
+    {
+        return TouchingSe;
+    }
 
     public bool getCanalisation()
     {
@@ -40,6 +45,11 @@ public abstract class Attack : MonoBehaviour
     public void ActivateHitBox(bool pBool)
     {
         this.HitBox.Activate(pBool);
+    }
+
+    public bool GetActivateHitBox()
+    {
+        return this.HitBox.getActivate();
     }
 
     public abstract void Touch(GameObject pPlayer);

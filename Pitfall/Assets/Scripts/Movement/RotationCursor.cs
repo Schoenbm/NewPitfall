@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationCursor : MonoBehaviour
+public class RotationCursor : Rotation
 {
     public float speed;
 
     void FixedUpdate()
     {
+        if (!getRotationOn())
+        {
+            return;
+        }
         // Generate a plane that intersects the transform's position with an upwards normal.
         Plane playerPlane = new Plane(Vector3.up, transform.position);
 

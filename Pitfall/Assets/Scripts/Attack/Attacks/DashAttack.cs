@@ -37,6 +37,7 @@ public class DashAttack : Attack
             pPlayerData.takeDamage(Damage);
             DashExpulsionDirection = new Vector3();
             DashExpulsionDirection = pPlayer.transform.position - aPlayerMovement.transform.position;
+            DashExpulsionDirection.y = 0;
             DashExpulsionDirection.Normalize();
             pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(DashExpulsionDirection, ExpulsionCoef * Expulsion);
         }
@@ -45,9 +46,11 @@ public class DashAttack : Attack
     override
     public void Execute()
     {
+        playLaunchSe();
         float yAngle = this.gameObject.transform.eulerAngles.y * Mathf.Deg2Rad;
         DashDirection = new Vector3(Mathf.Sin(yAngle), 0 , Mathf.Cos(yAngle));
         setMoving(true);
+        PlayerAnimator.SetBool("Run", true);
     }
 
     // Update is called once per frame

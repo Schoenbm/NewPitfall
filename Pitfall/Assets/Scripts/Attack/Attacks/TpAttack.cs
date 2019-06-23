@@ -45,6 +45,7 @@ public class TpAttack : Attack
             float ExpulsionCoef = pPlayerData.getExpulsionCoef();
             pPlayerData.takeDamage(Damage);
             ExpulsionDirection = pPlayer.transform.position - playerAttacking.transform.position;
+            ExpulsionDirection.y = 0;
             ExpulsionDirection = ExpulsionDirection.normalized;
             pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(ExpulsionDirection, ExpulsionCoef * Expulsion);
         }
@@ -52,6 +53,7 @@ public class TpAttack : Attack
 
     public void Tp()
     {
+
         float yAngle = this.gameObject.transform.eulerAngles.y * Mathf.Deg2Rad;
         TpDirection = new Vector3(Mathf.Sin(yAngle), 0, Mathf.Cos(yAngle));
 
@@ -82,7 +84,9 @@ public class TpAttack : Attack
     override
     public void Execute()
     {
+        playLaunchSe();
         setMoving(true);
+        this.PlayerAnimator.SetBool("TP", true);
     }
 
     // Update is called once per frame
