@@ -1603,6 +1603,26 @@ PrefabInstance:
       propertyPath: Cd
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3003358079199219084, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.595
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003358079199219084, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.83
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2215bebdda9dac246bff8fc18682525f, type: 3}
 --- !u!4 &4373658461161821056 stripped
@@ -1634,6 +1654,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireBallAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: PlayerAnimator
+      value: 
+      objectReference: {fileID: 221337314294720772}
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: Staff
+      value: 
+      objectReference: {fileID: 3702461720665791834}
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: damageCoef
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: expulsionCoef
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1436631998518252822, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
@@ -1689,26 +1729,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: PlayerAnimator
-      value: 
-      objectReference: {fileID: 221337314294720772}
-    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: Staff
-      value: 
-      objectReference: {fileID: 3702461720665791834}
-    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: damageCoef
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: expulsionCoef
-      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6005720951798254965, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
@@ -1762,6 +1782,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: MageCircularAttack
       objectReference: {fileID: 0}
+    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+        type: 3}
+      propertyPath: PlayerAnimator
+      value: 
+      objectReference: {fileID: 221337314294720772}
+    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+        type: 3}
+      propertyPath: HitBox
+      value: 
+      objectReference: {fileID: 2680442833400722861}
+    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+        type: 3}
+      propertyPath: FireBall
+      value: 
+      objectReference: {fileID: 3156188681363250118}
     - target: {fileID: 5588013751255230835, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1817,26 +1852,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: PlayerAnimator
-      value: 
-      objectReference: {fileID: 221337314294720772}
-    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: HitBox
-      value: 
-      objectReference: {fileID: 2680442833400722861}
-    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: FireBall
-      value: 
-      objectReference: {fileID: 3156188681363250118}
-    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: PlayerAnimator
-      value: 
-      objectReference: {fileID: -4577162346695793155}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e, type: 3}
 --- !u!4 &1640587356755791303 stripped
