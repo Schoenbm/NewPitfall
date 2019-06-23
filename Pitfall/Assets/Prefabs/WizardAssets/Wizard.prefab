@@ -604,6 +604,36 @@ Transform:
   m_Father: {fileID: 4863125224317282269}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3702461720665791834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2267447687248700489}
+  m_Layer: 0
+  m_Name: fireballSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2267447687248700489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3702461720665791834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.46, y: 3.4, z: 8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5969801506806380824}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3811501777822089616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1149,7 @@ GameObject:
   - component: {fileID: 2480578483422633262}
   - component: {fileID: 5779295101554096071}
   - component: {fileID: 1776247404145674957}
+  - component: {fileID: 221337314294720772}
   m_Layer: 9
   m_Name: Wizard
   m_TagString: Player
@@ -1142,6 +1173,7 @@ Transform:
   - {fileID: 1648881518953324733}
   - {fileID: 1837946753155462775}
   - {fileID: 2700625604236455858}
+  - {fileID: 2267447687248700489}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1199,6 +1231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6388189865025217295}
+  playerRotation: {fileID: 5779295101554096071}
+  playerAttackManager: {fileID: 5221567412891238151}
   speed: 0.3
   aMouse: 1
   IsWalking: 0
@@ -1229,6 +1263,25 @@ CapsuleCollider:
   m_Height: 9.683381
   m_Direction: 1
   m_Center: {x: 0.123194695, y: 4.0874314, z: 0}
+--- !u!95 &221337314294720772
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7242816311818963723}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 8058c807ee6958f44874fe5f9b3d7b14, type: 3}
+  m_Controller: {fileID: 9100000, guid: 434c7fd2840ed1944a30d532cdcbf9f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7359988308450298395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,21 +1533,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2700625604236455858}
     m_Modifications:
-    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: HaloMaxScale
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: Expulsion
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 1743767516635400016, guid: 2215bebdda9dac246bff8fc18682525f,
         type: 3}
       propertyPath: m_Name
@@ -1555,6 +1593,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: PlayerAnimator
+      value: 
+      objectReference: {fileID: 221337314294720772}
+    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: Cd
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2215bebdda9dac246bff8fc18682525f, type: 3}
 --- !u!4 &4373658461161821056 stripped
@@ -1582,11 +1630,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2700625604236455858}
     m_Modifications:
-    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
-      propertyPath: Hand
-      value: 
-      objectReference: {fileID: 3474679374033991424}
+      propertyPath: m_Name
+      value: FireBallAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 1436631998518252822, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1642,10 +1690,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
-      propertyPath: m_Name
-      value: FireBallAttack
+      propertyPath: PlayerAnimator
+      value: 
+      objectReference: {fileID: 221337314294720772}
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: Staff
+      value: 
+      objectReference: {fileID: 3702461720665791834}
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: damageCoef
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: expulsionCoef
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005720951798254965, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005720951798254965, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.733
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056179165922277213, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056179165922277213, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.806
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2fd6cb7620ecc7458f71bc671427a95, type: 3}
@@ -1736,23 +1819,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}
+      propertyPath: PlayerAnimator
+      value: 
+      objectReference: {fileID: 221337314294720772}
+    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+        type: 3}
       propertyPath: HitBox
       value: 
       objectReference: {fileID: 2680442833400722861}
     - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}
-      propertyPath: Hand
-      value: 
-      objectReference: {fileID: 5358847964726217767}
-    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
       propertyPath: FireBall
-      value: 
-      objectReference: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: FireBallAttackOfPlayer
       value: 
       objectReference: {fileID: 3156188681363250118}
     m_RemovedComponents: []

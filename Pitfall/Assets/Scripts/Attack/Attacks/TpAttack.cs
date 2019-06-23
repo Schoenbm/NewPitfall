@@ -18,7 +18,7 @@ public class TpAttack : Attack
 
     private Vector3 ExpulsionDirection;
     private Vector3 TpDirection;
-    
+
     private bool DidTp = false;
 
     private AttackHitBox HaloHitBox;
@@ -45,6 +45,7 @@ public class TpAttack : Attack
             float ExpulsionCoef = pPlayerData.getExpulsionCoef();
             pPlayerData.takeDamage(Damage);
             ExpulsionDirection = pPlayer.transform.position - playerAttacking.transform.position;
+            ExpulsionDirection.y = 0;
             ExpulsionDirection = ExpulsionDirection.normalized;
             pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(ExpulsionDirection, ExpulsionCoef * Expulsion);
         }
@@ -52,6 +53,7 @@ public class TpAttack : Attack
 
     public void Tp()
     {
+
         float yAngle = this.gameObject.transform.eulerAngles.y * Mathf.Deg2Rad;
         TpDirection = new Vector3(Mathf.Sin(yAngle), 0, Mathf.Cos(yAngle));
 
@@ -72,8 +74,8 @@ public class TpAttack : Attack
         playerAttacking.GetComponent<PlayerMovement>().TpPlayer(TpDirection, Distance);
         DidTp = true;
         Halo = Instantiate(HaloPrefab, this.transform);
-        Halo.transform.localScale= new Vector3(0,0,0);
-        Halo.transform.eulerAngles = new Vector3(90,0,0);
+        Halo.transform.localScale = new Vector3(0, 0, 0);
+        Halo.transform.eulerAngles = new Vector3(90, 0, 0);
         HitBox = Halo.GetComponent<AttackHitBox>();
         HitBox.SetAttack(this);
         HitBox.Activate(true);
@@ -82,18 +84,17 @@ public class TpAttack : Attack
     override
     public void Execute()
     {
+        playLaunchSe();
         setMoving(true);
+        this.PlayerAnimator.SetBool("TP", true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Tp update");
-        Debug.Log("Get moving :" + getMoving());
         if (getMoving())
         {
-            Debug.Log("Tp moving");
-            if(time> timeBeforeTp + HaloTime)
+            if (time > timeBeforeTp + HaloTime)
             {
                 time = 0;
                 setMoving(false);
@@ -102,11 +103,11 @@ public class TpAttack : Attack
             }
             else if (DidTp)
             {
-                float vFactor = (HaloMaxScale * ( time - timeBeforeTp)) / HaloTime ;
+                float vFactor = (HaloMaxScale * (time - timeBeforeTp)) / HaloTime;
                 Halo.transform.localScale = new Vector3(vFactor, vFactor, 1);
-                Halo.transform.localEulerAngles+= new Vector3(0, rotationSpeed, 0);
+                Halo.transform.localEulerAngles += new Vector3(0, rotationSpeed, 0);
             }
-            else if(time > timeBeforeTp)
+            else if (time > timeBeforeTp)
             {
                 Tp();
             }

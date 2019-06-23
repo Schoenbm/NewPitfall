@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotationCursor : MonoBehaviour
+public class RotationCursor : Rotation
 {
     public float speed;
 

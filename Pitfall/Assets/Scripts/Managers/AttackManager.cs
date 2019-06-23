@@ -11,11 +11,19 @@ public class AttackManager : MonoBehaviour
     private float[] AttacksPressureTime;
     private string[] ButtonsName;
 
+    private bool canAttack;
     private bool tempBoolCd;
     private bool tempBoolInput;
     // Start is called before the first frame update
+
+    public void setCanAttack(bool pBool)
+    {
+        canAttack = pBool;
+    }
+
     void Start()
     {
+        canAttack = true;
         int i = Attacks.Length;
         AttacksCds = new float[i];
         CurrentAttacksCds = new float[i];
@@ -23,7 +31,7 @@ public class AttackManager : MonoBehaviour
 
         if (i == 3)
         {
-            for(int k = 0; k < 3; k++)
+            for (int k = 0; k < 3; k++)
             {
                 AttacksCds[k] = Attacks[k].Cd;
                 CurrentAttacksCds[k] = 1;
@@ -43,7 +51,6 @@ public class AttackManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("ButtonSet");
             ButtonsName[0] = "Attack";
             ButtonsName[1] = "Capacity1";
             ButtonsName[2] = "Capacity2";
@@ -53,8 +60,11 @@ public class AttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canAttack)
+        {
+            return;
+        }
 
-        Debug.Log("In Update AttackManager");
         for (int k = 0; k < 3; k++)
         {
             if (CurrentAttacksCds[k] > 0)
@@ -67,13 +77,12 @@ public class AttackManager : MonoBehaviour
         {
             tempBoolCd = CurrentAttacksCds[k] <= 0;
             tempBoolInput = this.GetButtonDown(ButtonsName[k]);
-;            if (tempBoolInput && tempBoolCd)
+            ; if (tempBoolInput && tempBoolCd)
             {
                 Attacks[k].Execute();
                 CurrentAttacksCds[k] = AttacksCds[k];
-                Attacks[k].playLaunchSe();
             }
-            else if(!tempBoolInput && Attacks[k].getCanalisation())
+            else if (!tempBoolInput && Attacks[k].getCanalisation())
             {
                 Attacks[k].setCanalisation(false);
                 Attacks[k].ExecuteTimer();

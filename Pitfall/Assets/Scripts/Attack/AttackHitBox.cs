@@ -22,6 +22,11 @@ public class AttackHitBox : MonoBehaviour
         Activated = pActivate;
     }
 
+    public bool getActivate()
+    {
+        return Activated;
+    }
+
     public void SetAttack(Attack pOriginAttack)
     {
         OriginAttack = pOriginAttack;
