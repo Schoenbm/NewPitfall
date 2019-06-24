@@ -210,7 +210,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439516756}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f18ab4f1738371d478d3d74ae186db92, type: 3}
   m_Name: 
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561784630}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd830b0ef74171e4c9013539d9eae473, type: 3}
   m_Name: 
@@ -1260,7 +1260,7 @@ PrefabInstance:
     - target: {fileID: 8826683222653475468, guid: 3c45944158231574995fb819a5a4c0fc,
         type: 3}
       propertyPath: m_Name
-      value: Map_snow_large_wall 1
+      value: Map
       objectReference: {fileID: 0}
     - target: {fileID: 5487060521024743583, guid: 3c45944158231574995fb819a5a4c0fc,
         type: 3}
@@ -1317,20 +1317,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7588130539713219293, guid: 3c45944158231574995fb819a5a4c0fc,
+    - target: {fileID: 8117491619885770241, guid: 3c45944158231574995fb819a5a4c0fc,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7588130539713219293, guid: 3c45944158231574995fb819a5a4c0fc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7588130539713219293, guid: 3c45944158231574995fb819a5a4c0fc,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
+      propertyPath: m_Name
+      value: Walls
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c45944158231574995fb819a5a4c0fc, type: 3}

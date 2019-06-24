@@ -15,6 +15,8 @@ public class GameEnding : MonoBehaviour
     public int p_WinMaxCount;
     public GameObject aWallsPrefab;
 
+    private Vector3 wallPos;
+    private Quaternion wallRot;
     private PlayerManager aPlayerManager;
     private Respawn aRespawn;
     private float aTimer = 0;
@@ -23,7 +25,7 @@ public class GameEnding : MonoBehaviour
 
     void Start()
     {
-        aWalls = GameObject.Find("/Walls");
+        aWalls = GameObject.Find("/Map/Walls");
         
 
         GameObject vRespawn = GameObject.Find("Respawn");
@@ -69,10 +71,10 @@ public class GameEnding : MonoBehaviour
     public void ResetArena()
     {
         aPlayerManager.CreatePlayers();
+        wallPos = aWalls.transform.position;
+        wallRot = aWalls.transform.rotation;
         Destroy(aWalls);
-        Debug.Log("WallsDestroyed");
-        aWalls = Instantiate(aWallsPrefab);
-        Debug.Log("Walls replaced");
+        aWalls = Instantiate(aWallsPrefab, wallPos, wallRot);
     }
 
     void EndGame(CanvasGroup pImageCanvasGroup, bool pDoRestart)
@@ -84,7 +86,7 @@ public class GameEnding : MonoBehaviour
         {
             if (pDoRestart)
             {
-                Destroy(aPlayerManager);
+                Destroy(aPlayerManager.gameObject);
                 SceneManager.LoadScene(0);
             }
             else
