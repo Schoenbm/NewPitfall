@@ -56,9 +56,9 @@ public class AttackManager : MonoBehaviour
             v2CapString = vControllerString + v2CapString + pNumber;
         }
 
-        ButtonsName[1] = vAtkString;
-        ButtonsName[2] = v1CapString;
-        ButtonsName[0] = v2CapString;
+        ButtonsName[0] = vAtkString;
+        ButtonsName[1] = v1CapString;
+        ButtonsName[2] = v2CapString;
         Debug.Log(ButtonsName[0]);
         Debug.Log(ButtonsName[1]);
         Debug.Log(ButtonsName[2]);
@@ -83,12 +83,13 @@ public class AttackManager : MonoBehaviour
         for (int k = 0; k < 3; k++)
         {
             tempBoolCd = CurrentAttacksCds[k] <= 0;
-            tempBoolInput = this.GetButtonDown(ButtonsName[k]);
+            tempBoolInput = this.GetButtonDown(ButtonsName[k], k);
             ; if (tempBoolInput && tempBoolCd)
             {
                 Attacks[k].Execute();
                 CurrentAttacksCds[k] = AttacksCds[k];
             }
+            /**
             else if (!tempBoolInput && Attacks[k].getCanalisation())
             {
                 Attacks[k].setCanalisation(false);
@@ -98,12 +99,13 @@ public class AttackManager : MonoBehaviour
             {
                 Attacks[k].setRecast(true);
             }
+            */
         }
     }
 
-    bool GetButtonDown(string pButtonName)
+    bool GetButtonDown(string pButtonName, int k)
     {
-        if (pButtonName == "ControllerAttack" || pButtonName == "ControllerCapacity1")
+        if (k == 0 || k == 1)
         {
             return (Input.GetAxis(pButtonName) > 0);
         }
