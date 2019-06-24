@@ -11,7 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterSelect.unity
     guid: 03e401a0139040840a92c3c8420d44b7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Arene01.unity
     guid: cf04a249ba041024e97c11e60d96678a
+  - enabled: 1
+    path: Assets/Scenes/Snow Debug.unity
+    guid: 3092c736d011a50429391d9fc6d3f2ad
+  - enabled: 0
+    path: Assets/Scenes/Church Debug.unity
+    guid: fa43f1af27b42eb4dbf75637f5db3bf7
   m_configObjects: {}

@@ -17,6 +17,12 @@ public abstract class Attack : MonoBehaviour
     public AudioSource TouchingSe;
     public AttackHitBox HitBox;
 
+    public void touchWall(GameObject pWall)
+    {
+        pWall.GetComponent<WallFall>().takeDamage(Damage);
+        Debug.Log("take damage" + pWall.GetComponent<WallFall>().health);
+    }
+
     public void playLaunchSe()
     {
         LaunchingSe.Play();

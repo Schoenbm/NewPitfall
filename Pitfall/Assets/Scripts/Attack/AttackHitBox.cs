@@ -15,6 +15,11 @@ public class AttackHitBox : MonoBehaviour
             OriginAttack.Touch(other.gameObject);
             OriginAttack.playTouchingSe();
         }
+
+        if (other.tag == "Wall" && Activated)
+        {
+            OriginAttack.touchWall(other.gameObject);
+        }
     }
 
     public void Activate(bool pActivate)
