@@ -27,6 +27,7 @@ public class TauntAttack : Attack
     override
     public void Execute()
     {
+        this.currentHealth = this.playerData.getHealth();
         time = 0;
         DidTaunt = true;
         playLaunchSe();
@@ -69,8 +70,8 @@ public class TauntAttack : Attack
                 this.PlayerAnimator.SetBool("Taunt", false);
                 this.playerData.healDamage(currentHealth - playerData.getHealth());
                 DidTaunt = false;
-                this.playerMovement.speed += this.speedBonus;
-                this.playerData.Weight += this.weightBonus;
+                this.playerMovement.speed = this.playerOriginalSpeed + this.speedBonus;
+                this.playerData.Weight =this.playerOriginalWeight + this.weightBonus;
             }
 
         }
