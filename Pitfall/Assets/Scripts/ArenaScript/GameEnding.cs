@@ -70,7 +70,9 @@ public class GameEnding : MonoBehaviour
     {
         aPlayerManager.CreatePlayers();
         Destroy(aWalls);
+        Debug.Log("WallsDestroyed");
         aWalls = Instantiate(aWallsPrefab);
+        Debug.Log("Walls replaced");
     }
 
     void EndGame(CanvasGroup pImageCanvasGroup, bool pDoRestart)
