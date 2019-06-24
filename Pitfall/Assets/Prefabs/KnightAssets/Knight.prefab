@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 1783834563792352798}
   - component: {fileID: 5428089157487335527}
   - component: {fileID: 9182234711743797149}
+  - component: {fileID: 1551069086253209948}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Player
@@ -546,6 +547,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c086c2094634ba344bdd35d063c1a0dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+--- !u!114 &1551069086253209948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237152506359232125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cf2b48a318cd6f49ac5b11dbab96edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
@@ -1898,6 +1912,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5459411559623425372}
     m_Modifications:
+    - target: {fileID: 7706292361364233391, guid: 711aec0a9ed9345429748e749df27d6d,
+        type: 3}
+      propertyPath: m_Name
+      value: CircularAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 5134906019834743125, guid: 711aec0a9ed9345429748e749df27d6d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1963,18 +1982,13 @@ PrefabInstance:
       propertyPath: HitBox
       value: 
       objectReference: {fileID: 7247101224488577122}
-    - target: {fileID: 7706292361364233391, guid: 711aec0a9ed9345429748e749df27d6d,
-        type: 3}
-      propertyPath: m_Name
-      value: CircularAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546979412321819088, guid: 711aec0a9ed9345429748e749df27d6d,
+    - target: {fileID: 1660265323280327120, guid: 711aec0a9ed9345429748e749df27d6d,
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
         type: 2}
-    - target: {fileID: 1660265323280327120, guid: 711aec0a9ed9345429748e749df27d6d,
+    - target: {fileID: 3546979412321819088, guid: 711aec0a9ed9345429748e749df27d6d,
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -1982,6 +1996,12 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 711aec0a9ed9345429748e749df27d6d, type: 3}
+--- !u!4 &1114869110316375283 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5134906019834743125, guid: 711aec0a9ed9345429748e749df27d6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5204496909010818470}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3406181518663630740 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7457721660306057778, guid: 711aec0a9ed9345429748e749df27d6d,
@@ -1994,12 +2014,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbe8cb2d7d7ebb41a6a2ed53b69995f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1114869110316375283 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5134906019834743125, guid: 711aec0a9ed9345429748e749df27d6d,
-    type: 3}
-  m_PrefabInstance: {fileID: 5204496909010818470}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5792103764383749229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2007,35 +2021,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5459411559623425372}
     m_Modifications:
-    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
+    - target: {fileID: 5896455818332966116, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}
-      propertyPath: PlayerAnimator
-      value: 
-      objectReference: {fileID: 5330684980412868884}
-    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1237152506359232125}
-    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
-        type: 3}
-      propertyPath: DashPreparingTime
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
-        type: 3}
-      propertyPath: DashSpeed
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
-        type: 3}
-      propertyPath: exponentialFactor
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
-        type: 3}
-      propertyPath: DashTime
-      value: 1
+      propertyPath: m_Name
+      value: DashAttackObject
       objectReference: {fileID: 0}
     - target: {fileID: 5631612423994354232, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}
@@ -2092,10 +2081,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5896455818332966116, guid: d7c9358ad96af4e419069c0b8b40cee1,
+    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}
-      propertyPath: m_Name
-      value: DashAttackObject
+      propertyPath: PlayerAnimator
+      value: 
+      objectReference: {fileID: 5330684980412868884}
+    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1237152506359232125}
+    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: DashPreparingTime
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: DashSpeed
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: exponentialFactor
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: DashTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4898316431077881244, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}
@@ -2148,6 +2162,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5459411559623425372}
     m_Modifications:
+    - target: {fileID: 6096922748488702107, guid: 0f2433aab7f3b574bab29492e22e39fc,
+        type: 3}
+      propertyPath: m_Name
+      value: TauntAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 2461909001971326515, guid: 0f2433aab7f3b574bab29492e22e39fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2213,11 +2232,6 @@ PrefabInstance:
       propertyPath: HitBox
       value: 
       objectReference: {fileID: 5022219346148229841}
-    - target: {fileID: 6096922748488702107, guid: 0f2433aab7f3b574bab29492e22e39fc,
-        type: 3}
-      propertyPath: m_Name
-      value: TauntAttack
-      objectReference: {fileID: 0}
     - target: {fileID: 332023495837819029, guid: 0f2433aab7f3b574bab29492e22e39fc,
         type: 3}
       propertyPath: OutputAudioMixerGroup

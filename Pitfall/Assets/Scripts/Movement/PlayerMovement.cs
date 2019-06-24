@@ -8,19 +8,41 @@ public class PlayerMovement : MonoBehaviour
     public Rotation playerRotation;
     public AttackManager playerAttackManager;
     public float speed;
-    public bool aMouse;
 
+
+    private string HoriAxis;
+    private string VertiAxis;
     public bool IsWalking = false;
     private float timeExpulsed;
     Animator playerAnimator;
 
-    //<<<<<<< Updated upstream
-    //=======
     public void Start()
     {
         playerAnimator = GetComponent<Animator>();
         timeExpulsed = 0f;
     }
+
+    public void setPLayerNumber(int pNumber)
+    {
+        string vHori = "Horizontal";
+        string vVerti = "Vertical";
+        if (pNumber > 0)
+        {
+            playerRotation = this.gameObject.GetComponent<RotationJoystick>();
+            vHori = "Controller" + vHori + pNumber;
+            vVerti = "Controller" + vVerti + pNumber;
+        }
+        else
+        {
+            playerRotation = this.gameObject.GetComponent<RotationCursor>();
+        }
+
+        HoriAxis = vHori;
+        Debug.Log(HoriAxis);
+        VertiAxis = vVerti;
+        Debug.Log(VertiAxis);
+    }
+
     public void MovePlayer(Vector3 pDirection, float pSpeed)
     {
         rb.MovePosition(pDirection * pSpeed + rb.position);
@@ -75,45 +97,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //----------------clavier--------------------------------------------------
-        if (aMouse)
+        Vector3 vInputDirection = Vector3.zero;
+        vInputDirection.x = Input.GetAxis(HoriAxis);
+        vInputDirection.z = Input.GetAxis(VertiAxis);
+        bool hasHorizontalInput = !Mathf.Approximately(vInputDirection.x, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(vInputDirection.z, 0f);
+        IsWalking = hasHorizontalInput || hasVerticalInput;
+        playerAnimator.SetBool("Run", IsWalking);
+
+        if (vInputDirection.magnitude > 1)
         {
-            Vector3 vInputDirection = Vector3.zero;
-            vInputDirection.x = Input.GetAxis("Horizontal");
-            vInputDirection.z = Input.GetAxis("Vertical");
-
-            //<<<<<<< Updated upstream
-            //=======
-            bool hasHorizontalInput = !Mathf.Approximately(vInputDirection.x, 0f);
-            bool hasVerticalInput = !Mathf.Approximately(vInputDirection.z, 0f);
-            IsWalking = hasHorizontalInput || hasVerticalInput;
-            playerAnimator.SetBool("Run", IsWalking);
-
-            //>>>>>>> Stashed changes
-            if (vInputDirection.magnitude > 1)
-            {
-                vInputDirection.Normalize();
-            }
-            rb.MovePosition(rb.position + vInputDirection * speed);
+            vInputDirection.Normalize();
         }
-        // ------------------Manette-----------------------------------------------
-        //Mouvement de base
-        if (!aMouse)
-        {
-            Vector3 vInputDirection = Vector3.zero;
-            vInputDirection.x = Input.GetAxis("ControllerHorizontal") * speed;
-            vInputDirection.z = Input.GetAxis("ControllerVertical") * speed;
-
-            //<<<<<<< Updated upstream
-            //=======
-            bool hasHorizontalInput = !Mathf.Approximately(vInputDirection.x, 0f);
-            bool hasVerticalInput = !Mathf.Approximately(vInputDirection.z, 0f);
-            IsWalking = hasHorizontalInput || hasVerticalInput;
-            playerAnimator.SetBool("Run", IsWalking);
-
-            //>>>>>>> Stashed changes
-            rb.MovePosition(rb.position + vInputDirection);
-        }
+        rb.MovePosition(rb.position + vInputDirection * speed);
 
         if (this.timeExpulsed > 0)
         {

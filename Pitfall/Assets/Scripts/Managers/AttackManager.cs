@@ -5,7 +5,6 @@ using UnityEngine;
 public class AttackManager : MonoBehaviour
 {
     public Attack[] Attacks;
-    public bool IsController;
     private float[] AttacksCds;
     private float[] CurrentAttacksCds;
     private float[] AttacksPressureTime;
@@ -27,7 +26,6 @@ public class AttackManager : MonoBehaviour
         int i = Attacks.Length;
         AttacksCds = new float[i];
         CurrentAttacksCds = new float[i];
-        ButtonsName = new string[i];
 
         if (i == 3)
         {
@@ -41,24 +39,34 @@ public class AttackManager : MonoBehaviour
         {
             Debug.Log("error, not enough attacks");
         }
+    }
 
-        if (IsController)
+    public void setControl(int pNumber)
+    {
+        ButtonsName = new string[Attacks.Length];
+        string vAtkString = "Attack";
+        string v1CapString = "Capacity";
+        string v2CapString = "2ndCapacity";
+        string vControllerString = "Controller";
+
+        if (pNumber > 0)
         {
-            Debug.Log("ControllerSet");
-            ButtonsName[0] = "ControllerAttack";
-            ButtonsName[1] = "ControllerCapacity1";
-            ButtonsName[2] = "ControllerCapacity2";
+            vAtkString = vControllerString + vAtkString + pNumber;
+            v1CapString = vControllerString + v1CapString + pNumber;
+            v2CapString = vControllerString + v2CapString + pNumber;
         }
-        else
-        {
-            ButtonsName[0] = "Attack";
-            ButtonsName[1] = "Capacity1";
-            ButtonsName[2] = "Capacity2";
-        }
+
+        ButtonsName[1] = vAtkString;
+        ButtonsName[2] = v1CapString;
+        ButtonsName[0] = v2CapString;
+        Debug.Log(ButtonsName[0]);
+        Debug.Log(ButtonsName[1]);
+        Debug.Log(ButtonsName[2]);
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!canAttack)
         {

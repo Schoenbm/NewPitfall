@@ -14,14 +14,10 @@ public class VolumeModification : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
     }
 
-    void Update()
-    {
-        audioSrc.volume = musicVolume;
-    }
-
 
     public void SetVolume(float volume)
     {
         aAudioMixer.SetFloat("Volume", volume);
+        audioSrc.volume = musicVolume;
     }
 }
