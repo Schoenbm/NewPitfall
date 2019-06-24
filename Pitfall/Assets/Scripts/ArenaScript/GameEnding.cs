@@ -20,6 +20,12 @@ public class GameEnding : MonoBehaviour
     private float aTimer = 0;
     private GameObject aWalls;
     private bool aEndGame = false;
+    private bool mageWinBool = false;
+
+    public void setMageWinBool(bool pBool)
+    {
+        mageWinBool = pBool;
+    }
 
     void Start()
     {
@@ -61,7 +67,15 @@ public class GameEnding : MonoBehaviour
     {
         if (aEndGame)
         {
-            EndGame(aMageWin, true);
+            if (mageWinBool)
+            {
+                Debug.Log("Mage wins");
+                EndGame(aMageWin, true);
+            }
+            else
+            {
+                EndGame(aKnightWin, true);
+            }
         }
     }
 
@@ -84,7 +98,7 @@ public class GameEnding : MonoBehaviour
         {
             if (pDoRestart)
             {
-                Destroy(aPlayerManager);
+                Destroy(aPlayerManager.gameObject);
                 SceneManager.LoadScene(0);
             }
             else

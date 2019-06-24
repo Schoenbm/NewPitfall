@@ -126,6 +126,16 @@ public class PlayerManager : MonoBehaviour
         if (aNumberPlayerAlive ==1)
         {
             int vWinner = this.findWinner();
+
+            if(aPlayers[vWinner].gameObject.GetComponent<PlayerData>().playerClass == "Wizard")
+            {
+                aGameEnding.setMageWinBool(true);
+            }
+            else
+            {
+                aGameEnding.setMageWinBool(false);
+            }
+
             Destroy(aPlayers[vWinner].gameObject);
             aGameEnding.winnerFound(vWinner);
         }

@@ -1010,7 +1010,6 @@ MonoBehaviour:
   - {fileID: 1445941296612139866}
   - {fileID: 3156188681363250118}
   - {fileID: 6164595792754787082}
-  IsController: 0
 --- !u!1 &6477475557164478867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,6 +1217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98a09d83c114e94f9b12d004e972f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerClass: Wizard
   Weight: 20
 --- !u!114 &2480578483422633262
 MonoBehaviour:
@@ -1235,7 +1235,6 @@ MonoBehaviour:
   playerRotation: {fileID: 5779295101554096071}
   playerAttackManager: {fileID: 5221567412891238151}
   speed: 0.3
-  aMouse: 1
   IsWalking: 0
 --- !u!114 &5779295101554096071
 MonoBehaviour:
@@ -1547,16 +1546,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2700625604236455858}
     m_Modifications:
-    - target: {fileID: 1743767516635400016, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: m_Name
-      value: TpAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743767516635400016, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 9178992076497619089, guid: 2215bebdda9dac246bff8fc18682525f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1611,6 +1600,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743767516635400016, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: m_Name
+      value: TpAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743767516635400016, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
         type: 3}
@@ -1681,11 +1680,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2700625604236455858}
     m_Modifications:
-    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: m_Name
-      value: FireBallAttack
-      objectReference: {fileID: 0}
     - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
       propertyPath: PlayerAnimator
@@ -1761,6 +1755,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: m_Name
+      value: FireBallAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 6005720951798254965, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
       propertyPath: m_Pitch
@@ -1820,11 +1819,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2700625604236455858}
     m_Modifications:
-    - target: {fileID: 2470184303646593399, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: m_Name
-      value: MageCircularAttack
-      objectReference: {fileID: 0}
     - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}
       propertyPath: PlayerAnimator
@@ -1894,6 +1888,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470184303646593399, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+        type: 3}
+      propertyPath: m_Name
+      value: MageCircularAttack
       objectReference: {fileID: 0}
     - target: {fileID: 5599308999953372735, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}

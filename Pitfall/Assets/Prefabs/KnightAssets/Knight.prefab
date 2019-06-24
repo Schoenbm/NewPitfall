@@ -518,6 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98a09d83c114e94f9b12d004e972f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerClass: Knight
   Weight: 20
 --- !u!114 &5428089157487335527
 MonoBehaviour:
@@ -535,7 +536,6 @@ MonoBehaviour:
   playerRotation: {fileID: 9182234711743797149}
   playerAttackManager: {fileID: 5584656369143507632}
   speed: 0.3
-  aMouse: 1
   IsWalking: 0
 --- !u!114 &9182234711743797149
 MonoBehaviour:
@@ -1378,7 +1378,6 @@ MonoBehaviour:
   - {fileID: 3406181518663630740}
   - {fileID: 9141859039811059914}
   - {fileID: 3118296630576391336}
-  IsController: 0
 --- !u!1 &5408430886227408773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,11 +1911,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5459411559623425372}
     m_Modifications:
-    - target: {fileID: 7706292361364233391, guid: 711aec0a9ed9345429748e749df27d6d,
-        type: 3}
-      propertyPath: m_Name
-      value: CircularAttack
-      objectReference: {fileID: 0}
     - target: {fileID: 5134906019834743125, guid: 711aec0a9ed9345429748e749df27d6d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1982,6 +1976,11 @@ PrefabInstance:
       propertyPath: HitBox
       value: 
       objectReference: {fileID: 7247101224488577122}
+    - target: {fileID: 7706292361364233391, guid: 711aec0a9ed9345429748e749df27d6d,
+        type: 3}
+      propertyPath: m_Name
+      value: CircularAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 1660265323280327120, guid: 711aec0a9ed9345429748e749df27d6d,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -2021,11 +2020,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5459411559623425372}
     m_Modifications:
-    - target: {fileID: 5896455818332966116, guid: d7c9358ad96af4e419069c0b8b40cee1,
-        type: 3}
-      propertyPath: m_Name
-      value: DashAttackObject
-      objectReference: {fileID: 0}
     - target: {fileID: 5631612423994354232, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2111,6 +2105,11 @@ PrefabInstance:
       propertyPath: DashTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5896455818332966116, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: m_Name
+      value: DashAttackObject
+      objectReference: {fileID: 0}
     - target: {fileID: 4898316431077881244, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -2162,11 +2161,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5459411559623425372}
     m_Modifications:
-    - target: {fileID: 6096922748488702107, guid: 0f2433aab7f3b574bab29492e22e39fc,
-        type: 3}
-      propertyPath: m_Name
-      value: TauntAttack
-      objectReference: {fileID: 0}
     - target: {fileID: 2461909001971326515, guid: 0f2433aab7f3b574bab29492e22e39fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2221,6 +2215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096922748488702107, guid: 0f2433aab7f3b574bab29492e22e39fc,
+        type: 3}
+      propertyPath: m_Name
+      value: TauntAttack
       objectReference: {fileID: 0}
     - target: {fileID: 903237636759906513, guid: 0f2433aab7f3b574bab29492e22e39fc,
         type: 3}

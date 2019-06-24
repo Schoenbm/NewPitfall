@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    public string playerClass;
     public float Weight;
     private int Health = 0;
 
