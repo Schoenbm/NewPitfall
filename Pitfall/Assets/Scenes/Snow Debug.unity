@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4476967, g: 0.49767423, b: 0.5753917, a: 1}
+  m_IndirectSpecularColor: {r: 0.44769675, g: 0.49767494, b: 0.57539135, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18ab4f1738371d478d3d74ae186db92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeyboardPlayer: 0
   MagePrefab: {fileID: 7242816311818963723, guid: d49db9fc77017f74d9186a748592c3de,
     type: 3}
   KnightPrefab: {fileID: 1237152506359232125, guid: ba30238f2847cbe46ad92121114dce08,
@@ -1284,7 +1285,7 @@ PrefabInstance:
     - target: {fileID: 5487060521024743583, guid: 3c45944158231574995fb819a5a4c0fc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.95822513
+      value: -0.15048137
       objectReference: {fileID: 0}
     - target: {fileID: 5487060521024743583, guid: 3c45944158231574995fb819a5a4c0fc,
         type: 3}
@@ -1294,7 +1295,7 @@ PrefabInstance:
     - target: {fileID: 5487060521024743583, guid: 3c45944158231574995fb819a5a4c0fc,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.28601503
+      value: 0.9886129
       objectReference: {fileID: 0}
     - target: {fileID: 5487060521024743583, guid: 3c45944158231574995fb819a5a4c0fc,
         type: 3}
@@ -1309,7 +1310,7 @@ PrefabInstance:
     - target: {fileID: 5487060521024743583, guid: 3c45944158231574995fb819a5a4c0fc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 146.761
+      value: -17.310001
       objectReference: {fileID: 0}
     - target: {fileID: 5487060521024743583, guid: 3c45944158231574995fb819a5a4c0fc,
         type: 3}
