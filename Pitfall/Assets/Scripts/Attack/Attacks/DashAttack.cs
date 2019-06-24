@@ -50,7 +50,7 @@ public class DashAttack : Attack
         float yAngle = this.gameObject.transform.eulerAngles.y * Mathf.Deg2Rad;
         DashDirection = new Vector3(Mathf.Sin(yAngle), 0 , Mathf.Cos(yAngle));
         setMoving(true);
-        PlayerAnimator.SetBool("Run", true);
+        PlayerAnimator.SetBool("Rush", true);
     }
 
     // Update is called once per frame
@@ -69,6 +69,7 @@ public class DashAttack : Attack
             }
             if (CurrentDashTime > DashPreparingTime)
             {
+                PlayerAnimator.SetBool("Rush", true);
                 ActivateHitBox(true);
                 aPlayerMovement.MovePlayer(DashDirection, DashSpeed - Mathf.Exp(CurrentDashTime) * exponentialFactor);
             }

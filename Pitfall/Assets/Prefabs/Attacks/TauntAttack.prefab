@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7706292361364233391
+--- !u!1 &6096922748488702107
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,66 +8,66 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5134906019834743125}
-  - component: {fileID: 7457721660306057778}
-  - component: {fileID: 3546979412321819088}
-  - component: {fileID: 1660265323280327120}
-  m_Layer: 10
-  m_Name: CircularAttack
+  - component: {fileID: 2461909001971326515}
+  - component: {fileID: 903237636759906513}
+  - component: {fileID: 332023495837819029}
+  - component: {fileID: 1010394241572734351}
+  m_Layer: 0
+  m_Name: TauntAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5134906019834743125
+--- !u!4 &2461909001971326515
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7706292361364233391}
+  m_GameObject: {fileID: 6096922748488702107}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 56.56202, y: -44.733757, z: -41.896725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7457721660306057778
+--- !u!114 &903237636759906513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7706292361364233391}
+  m_GameObject: {fileID: 6096922748488702107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fbe8cb2d7d7ebb41a6a2ed53b69995f, type: 3}
+  m_Script: {fileID: 11500000, guid: 73ea3f0e06bed8d4c88870e592a8e6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 0}
-  Damage: 10
-  Cd: 1.3
-  Expulsion: 12
-  LaunchingSe: {fileID: 3546979412321819088}
-  TouchingSe: {fileID: 1660265323280327120}
+  Damage: 0
+  Cd: 10
+  Expulsion: 0
+  LaunchingSe: {fileID: 1010394241572734351}
+  TouchingSe: {fileID: 332023495837819029}
   HitBox: {fileID: 0}
-  DamageReturn: 15
-  ExpulsionReturn: 30
-  timeReturn: 0.35
---- !u!82 &3546979412321819088
+  buffTime: 6
+  speedBonus: 0.15
+  weightBonus: 20
+--- !u!82 &332023495837819029
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7706292361364233391}
+  m_GameObject: {fileID: 6096922748488702107}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d7cc2b9a0a353674696bfe12334a7123, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 75cb57d7017744748a06cf6f9efe3dee, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -151,20 +151,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &1660265323280327120
+--- !u!82 &1010394241572734351
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7706292361364233391}
+  m_GameObject: {fileID: 6096922748488702107}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f677b2a92c0d45843b6ac35318c3bc4c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2c67a4ffd1cac28458a9deedba7c65f2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
-  m_Pitch: 1
+  m_Volume: 1
+  m_Pitch: 0.83
   Loop: 0
   Mute: 0
   Spatialize: 0

@@ -198,7 +198,7 @@ AnimatorState:
   - {fileID: 6135247881757706524}
   - {fileID: -1257126836690334682}
   m_StateMachineBehaviours:
-  - {fileID: 2869208222691844688}
+  - {fileID: 7850552194455385164}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -214,6 +214,19 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &-7150926649710963440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72987d83758b9a642a61d57c29fd43b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  booleanVariableName: Fireball
 --- !u!114 &-6917471548345187758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,7 +256,7 @@ AnimatorState:
   - {fileID: 8802991534566062476}
   - {fileID: 3819087620569557812}
   m_StateMachineBehaviours:
-  - {fileID: -6917471548345187758}
+  - {fileID: 8542295147016983615}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -332,7 +345,7 @@ AnimatorState:
   - {fileID: -8648349932568452914}
   - {fileID: 555101768679369178}
   m_StateMachineBehaviours:
-  - {fileID: -2927986037324582441}
+  - {fileID: -7150926649710963440}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -895,6 +908,19 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &7850552194455385164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72987d83758b9a642a61d57c29fd43b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  booleanVariableName: TP
 --- !u!114 &8061587279675950349
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -908,6 +934,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   booleanVariableName: TP
+--- !u!114 &8542295147016983615
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72987d83758b9a642a61d57c29fd43b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  booleanVariableName: Attacking
 --- !u!1101 &8802991534566062476
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

@@ -76,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //----------------clavier--------------------------------------------------
-
         if (aMouse)
         {
             Vector3 vInputDirection = Vector3.zero;

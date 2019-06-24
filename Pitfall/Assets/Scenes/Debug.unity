@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18ab4f1738371d478d3d74ae186db92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MagePrefab: {fileID: 7242816311818963723, guid: d49db9fc77017f74d9186a748592c3de,
+  MagePrefab: {fileID: 1237152506359232125, guid: ba30238f2847cbe46ad92121114dce08,
     type: 3}
   KnightPrefab: {fileID: 7242816311818963723, guid: d49db9fc77017f74d9186a748592c3de,
     type: 3}

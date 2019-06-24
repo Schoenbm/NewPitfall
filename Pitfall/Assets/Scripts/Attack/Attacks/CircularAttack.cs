@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class CircularAttack : Attack
 {
-    public float Radius;
-    public GameObject Hand;
-    private Vector3 originalHandPos;
-    private Vector3 originalHandRot;
-
-    public float TotalTime;
+    private GameObject tempPlayerTouched;
+    public int DamageReturn;
+    public int ExpulsionReturn;
+    public float timeReturn;
     private float time;
-    private float cosTime;
-    private float sinTime;
-    private float tanTime;
-    private Vector3 newPosition;
-    private Vector3 newRotation;
+
     private Vector3 ExpulsionDirection;
 
     public Vector3 getExpulsionDirection()
@@ -25,11 +19,9 @@ public class CircularAttack : Attack
 
     private void Start()
     {
-        this.setCanalisation(true);
-        this.setCanRecast(true);
-        newRotation = new Vector3(90, 0, 0);
-        newPosition = new Vector3(-Radius, 0, 0);
         ExpulsionDirection = new Vector3();
+        tempPlayerTouched = this.gameObject;
+        this.ActivateHitBox(false);
     }
 
     override
@@ -43,52 +35,63 @@ public class CircularAttack : Attack
         }
         else
         {
-            float ExpulsionCoef = pPlayerData.getExpulsionCoef();
-            pPlayerData.takeDamage(Damage);
-            ExpulsionDirection = Hand.transform.position - this.transform.position;
+            ExpulsionDirection = pPlayer.transform.position - this.transform.position;
             ExpulsionDirection.y = 0;
             ExpulsionDirection = ExpulsionDirection.normalized;
-            pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(ExpulsionDirection, ExpulsionCoef * Expulsion);
+
+            float ExpulsionCoef = pPlayerData.getExpulsionCoef();
+
+            if (this.tempPlayerTouched == pPlayer)
+            {
+                pPlayerData.takeDamage(DamageReturn);
+                pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(ExpulsionDirection, ExpulsionCoef * ExpulsionReturn);
+            }
+            else
+            {
+                pPlayerData.takeDamage(Damage);
+                pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(ExpulsionDirection, ExpulsionCoef * Expulsion);
+                tempPlayerTouched = pPlayer;
+            }
         }
     }
 
     override
     public void Execute()
     {
-        playLaunchSe();
-        originalHandPos = Hand.transform.localPosition;
-        originalHandRot = Hand.transform.localEulerAngles;
         time = 0;
-        newPosition = new Vector3(-1,0,0);
+        playLaunchSe();
+        this.PlayerAnimator.SetBool("Attacking", true);
+        this.ActivateHitBox(true);
         setMoving(true);
     }
 
     private void Update()
     {
+        if (this.GetActivateHitBox() && !this.PlayerAnimator.GetBool("Attacking"))
+        {
+            this.tempPlayerTouched = this.gameObject;
+            this.ActivateHitBox(false);
+        }
+        
         if (getMoving())
         {
-            ActivateHitBox(true);
-            cosTime = Mathf.Cos((Mathf.PI * time) / TotalTime);
-            sinTime = Mathf.Sin((Mathf.PI * time) / TotalTime);
-            newPosition.x = sinTime * Radius;
-            newPosition.z = cosTime * Radius;
-            newRotation.z = Mathf.Rad2Deg * Mathf.Atan2(cosTime , sinTime) - 90;
-            Hand.transform.localPosition = newPosition;
-            Hand.transform.localEulerAngles = newRotation;
             time += Time.deltaTime;
 
-            if (getRecast() && sinTime < 0){
-                Debug.Log("Recast");
-                setRecast(false);
-            }
-            else if ( sinTime < 0)
+            if (time >= timeReturn)
             {
-                Hand.transform.localPosition = originalHandPos;
-                Hand.transform.localEulerAngles = originalHandRot;
-                setMoving(false);
-                ActivateHitBox(false);
-            }
+                if (this.tempPlayerTouched != this.gameObject)
+                {
+                    this.getLaunchSe().pitch = 1.2f;
+                    this.playLaunchSe();
+                }
+                this.getLaunchSe().pitch = 0.8f;
+                this.playLaunchSe();
+                this.getLaunchSe().pitch = 1f;
 
+
+                time = 0;
+                this.setMoving(false);
+            }
         }
     }
 }

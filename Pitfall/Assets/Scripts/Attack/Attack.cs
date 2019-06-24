@@ -32,6 +32,11 @@ public abstract class Attack : MonoBehaviour
         return TouchingSe;
     }
 
+    public AudioSource getLaunchSe()
+    {
+        return LaunchingSe;
+    }
+
     public bool getCanalisation()
     {
         return Canalisation;

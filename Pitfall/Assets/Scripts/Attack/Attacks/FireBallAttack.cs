@@ -55,10 +55,6 @@ public class FireBallAttack : Attack
             time = TotalTime;
             float ExpulsionCoef = pPlayerData.getExpulsionCoef();
             pPlayerData.takeDamage(tempDamage);
-            //ExpulsionDirection = pPlayer.transform.position - fireball.transform.position;
-            //ExpulsionDirection.y = 0;
-            //ExpulsionDirection = ExpulsionDirection.normalized;
-
             pPlayer.GetComponent<PlayerMovement>().ExpulsePlayer(FireballDirection, ExpulsionCoef * tempExpulsion);
         }
     }
