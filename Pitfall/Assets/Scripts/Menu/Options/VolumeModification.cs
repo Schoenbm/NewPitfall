@@ -19,6 +19,5 @@ public class VolumeModification : MonoBehaviour
     {
         aAudioMixer.SetFloat("Volume", volume);
         audioSrc.volume = musicVolume;
-
     }
 }

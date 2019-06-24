@@ -1150,6 +1150,7 @@ GameObject:
   - component: {fileID: 5779295101554096071}
   - component: {fileID: 1776247404145674957}
   - component: {fileID: 221337314294720772}
+  - component: {fileID: -1407401037043089322}
   m_Layer: 9
   m_Name: Wizard
   m_TagString: Player
@@ -1282,6 +1283,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1407401037043089322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7242816311818963723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cf2b48a318cd6f49ac5b11dbab96edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
 --- !u!1 &7359988308450298395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,16 +1547,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2700625604236455858}
     m_Modifications:
-    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: PlayerAnimator
-      value: 
-      objectReference: {fileID: 221337314294720772}
-    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: Cd
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 1743767516635400016, guid: 2215bebdda9dac246bff8fc18682525f,
         type: 3}
       propertyPath: m_Name
@@ -1608,22 +1612,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
+    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
         type: 3}
-      propertyPath: m_Pitch
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
+      propertyPath: PlayerAnimator
       value: 
-      objectReference: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
-        type: 2}
+      objectReference: {fileID: 221337314294720772}
+    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: Cd
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3003358079199219084, guid: 2215bebdda9dac246bff8fc18682525f,
         type: 3}
       propertyPath: m_Volume
@@ -1635,6 +1633,22 @@ PrefabInstance:
       value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 3003358079199219084, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
+        type: 2}
+    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -1667,6 +1681,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2700625604236455858}
     m_Modifications:
+    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
+        type: 3}
+      propertyPath: m_Name
+      value: FireBallAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
       propertyPath: PlayerAnimator
@@ -1742,16 +1761,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: m_Name
-      value: FireBallAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 6005720951798254965, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
       propertyPath: m_Pitch
@@ -1816,11 +1825,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: MageCircularAttack
       objectReference: {fileID: 0}
-    - target: {fileID: 2470184303646593399, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
+      propertyPath: PlayerAnimator
+      value: 
+      objectReference: {fileID: 221337314294720772}
+    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+        type: 3}
+      propertyPath: HitBox
+      value: 
+      objectReference: {fileID: 2680442833400722861}
+    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+        type: 3}
+      propertyPath: FireBall
+      value: 
+      objectReference: {fileID: 3156188681363250118}
     - target: {fileID: 5588013751255230835, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1876,21 +1895,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: PlayerAnimator
-      value: 
-      objectReference: {fileID: 221337314294720772}
-    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: HitBox
-      value: 
-      objectReference: {fileID: 2680442833400722861}
-    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: FireBall
-      value: 
-      objectReference: {fileID: 3156188681363250118}
     - target: {fileID: 5599308999953372735, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -1905,12 +1909,6 @@ PrefabInstance:
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e, type: 3}
---- !u!4 &1640587356755791303 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5588013751255230835, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-    type: 3}
-  m_PrefabInstance: {fileID: 6577530776324007092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1445941296612139866 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
@@ -1923,3 +1921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c952fc49512c3da469051cdb17f9c562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1640587356755791303 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5588013751255230835, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6577530776324007092}
+  m_PrefabAsset: {fileID: 0}

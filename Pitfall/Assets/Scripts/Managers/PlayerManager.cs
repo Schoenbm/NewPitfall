@@ -7,6 +7,9 @@ public class PlayerManager : MonoBehaviour
     private int aNumberPlayer;
     private Player[] aPlayers;
 
+    public bool KeyboardPlayer;
+    private int NoKeyboardOffset;
+
     public GameObject MagePrefab;
     public GameObject KnightPrefab;
     private Dictionary<string, GameObject> StringToPrefab;
@@ -73,6 +76,16 @@ public class PlayerManager : MonoBehaviour
 
     public void CreatePlayers()
     {
+
+        if ( !KeyboardPlayer)
+        {
+            NoKeyboardOffset = 0;
+        }
+        else
+        {
+            NoKeyboardOffset = 1;
+        }
+
         aNumberPlayerAlive = aNumberPlayer;
         string vName;
         GameObject vPlayerGameObject;
@@ -86,7 +99,7 @@ public class PlayerManager : MonoBehaviour
             vPlayerGameObject = Instantiate(vPlayerGameObject, aArenaRespawnPointsPosition[k], aArenaRespawnPointsRotation[k]);
             vPlayer = vPlayerGameObject.GetComponent<Player>();
             aPlayers[k] = vPlayer;
-            vPlayer.setPlayer(k, this);
+            vPlayer.setPlayer(k + NoKeyboardOffset, this);
             aVirtualCam.setPlayer(vPlayer.transform, k);
         }
 

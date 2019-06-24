@@ -5,7 +5,6 @@ using UnityEngine;
 public class AttackManager : MonoBehaviour
 {
     public Attack[] Attacks;
-    public bool IsController;
     private float[] AttacksCds;
     private float[] CurrentAttacksCds;
     private float[] AttacksPressureTime;
@@ -27,7 +26,6 @@ public class AttackManager : MonoBehaviour
         int i = Attacks.Length;
         AttacksCds = new float[i];
         CurrentAttacksCds = new float[i];
-        ButtonsName = new string[i];
 
         if (i == 3)
         {
@@ -41,24 +39,34 @@ public class AttackManager : MonoBehaviour
         {
             Debug.Log("error, not enough attacks");
         }
+    }
 
-        if (IsController)
+    public void setControl(int pNumber)
+    {
+        ButtonsName = new string[Attacks.Length];
+        string vAtkString = "Attack";
+        string v1CapString = "Capacity";
+        string v2CapString = "2ndCapacity";
+        string vControllerString = "Controller";
+
+        if (pNumber > 0)
         {
-            Debug.Log("ControllerSet");
-            ButtonsName[0] = "ControllerAttack";
-            ButtonsName[1] = "ControllerCapacity1";
-            ButtonsName[2] = "ControllerCapacity2";
+            vAtkString = vControllerString + vAtkString + pNumber;
+            v1CapString = vControllerString + v1CapString + pNumber;
+            v2CapString = vControllerString + v2CapString + pNumber;
         }
-        else
-        {
-            ButtonsName[0] = "Attack";
-            ButtonsName[1] = "Capacity1";
-            ButtonsName[2] = "Capacity2";
-        }
+
+        ButtonsName[0] = vAtkString;
+        ButtonsName[1] = v1CapString;
+        ButtonsName[2] = v2CapString;
+        Debug.Log(ButtonsName[0]);
+        Debug.Log(ButtonsName[1]);
+        Debug.Log(ButtonsName[2]);
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!canAttack)
         {
@@ -75,12 +83,13 @@ public class AttackManager : MonoBehaviour
         for (int k = 0; k < 3; k++)
         {
             tempBoolCd = CurrentAttacksCds[k] <= 0;
-            tempBoolInput = this.GetButtonDown(ButtonsName[k]);
+            tempBoolInput = this.GetButtonDown(ButtonsName[k], k);
             ; if (tempBoolInput && tempBoolCd)
             {
                 Attacks[k].Execute();
                 CurrentAttacksCds[k] = AttacksCds[k];
             }
+            /**
             else if (!tempBoolInput && Attacks[k].getCanalisation())
             {
                 Attacks[k].setCanalisation(false);
@@ -90,12 +99,13 @@ public class AttackManager : MonoBehaviour
             {
                 Attacks[k].setRecast(true);
             }
+            */
         }
     }
 
-    bool GetButtonDown(string pButtonName)
+    bool GetButtonDown(string pButtonName, int k)
     {
-        if (pButtonName == "ControllerAttack" || pButtonName == "ControllerCapacity1")
+        if (k == 0 || k == 1)
         {
             return (Input.GetAxis(pButtonName) > 0);
         }
