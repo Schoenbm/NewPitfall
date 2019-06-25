@@ -1911,6 +1911,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5459411559623425372}
     m_Modifications:
+    - target: {fileID: 7706292361364233391, guid: 711aec0a9ed9345429748e749df27d6d,
+        type: 3}
+      propertyPath: m_Name
+      value: CircularAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 5134906019834743125, guid: 711aec0a9ed9345429748e749df27d6d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1976,10 +1981,15 @@ PrefabInstance:
       propertyPath: HitBox
       value: 
       objectReference: {fileID: 7247101224488577122}
-    - target: {fileID: 7706292361364233391, guid: 711aec0a9ed9345429748e749df27d6d,
+    - target: {fileID: 7457721660306057778, guid: 711aec0a9ed9345429748e749df27d6d,
         type: 3}
-      propertyPath: m_Name
-      value: CircularAttack
+      propertyPath: Damage
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7457721660306057778, guid: 711aec0a9ed9345429748e749df27d6d,
+        type: 3}
+      propertyPath: wallDamage
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1660265323280327120, guid: 711aec0a9ed9345429748e749df27d6d,
         type: 3}
@@ -2020,6 +2030,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5459411559623425372}
     m_Modifications:
+    - target: {fileID: 5896455818332966116, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: m_Name
+      value: DashAttackObject
+      objectReference: {fileID: 0}
     - target: {fileID: 5631612423994354232, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2105,10 +2120,15 @@ PrefabInstance:
       propertyPath: DashTime
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5896455818332966116, guid: d7c9358ad96af4e419069c0b8b40cee1,
+    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}
-      propertyPath: m_Name
-      value: DashAttackObject
+      propertyPath: wallDamage
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: Cd
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4898316431077881244, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}
@@ -2161,6 +2181,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5459411559623425372}
     m_Modifications:
+    - target: {fileID: 6096922748488702107, guid: 0f2433aab7f3b574bab29492e22e39fc,
+        type: 3}
+      propertyPath: m_Name
+      value: TauntAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 2461909001971326515, guid: 0f2433aab7f3b574bab29492e22e39fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2216,11 +2241,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6096922748488702107, guid: 0f2433aab7f3b574bab29492e22e39fc,
-        type: 3}
-      propertyPath: m_Name
-      value: TauntAttack
-      objectReference: {fileID: 0}
     - target: {fileID: 903237636759906513, guid: 0f2433aab7f3b574bab29492e22e39fc,
         type: 3}
       propertyPath: PlayerAnimator
@@ -2231,6 +2251,11 @@ PrefabInstance:
       propertyPath: HitBox
       value: 
       objectReference: {fileID: 5022219346148229841}
+    - target: {fileID: 903237636759906513, guid: 0f2433aab7f3b574bab29492e22e39fc,
+        type: 3}
+      propertyPath: Cd
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 332023495837819029, guid: 0f2433aab7f3b574bab29492e22e39fc,
         type: 3}
       propertyPath: OutputAudioMixerGroup

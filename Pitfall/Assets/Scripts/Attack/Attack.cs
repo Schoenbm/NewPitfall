@@ -12,14 +12,14 @@ public abstract class Attack : MonoBehaviour
     public float Expulsion;
     private bool IsMoving = false;
     private bool Canalisation = false;
-
+    public int wallDamage;
     public AudioSource LaunchingSe;
     public AudioSource TouchingSe;
     public AttackHitBox HitBox;
 
     public void touchWall(GameObject pWall)
     {
-        pWall.GetComponent<WallFall>().takeDamage(Damage);
+        pWall.GetComponent<WallFall>().takeDamage(wallDamage);
         Debug.Log("take damage" + pWall.GetComponent<WallFall>().health);
     }
 

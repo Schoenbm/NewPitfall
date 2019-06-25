@@ -180,8 +180,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1237510309594758253}
+  playerRotation: {fileID: 0}
+  playerAttackManager: {fileID: 0}
   speed: 0.3
-  aMouse: 0
+  IsWalking: 0
 --- !u!114 &1237510309594758263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d98a09d83c114e94f9b12d004e972f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weight: 20
+  playerClass: Knight
+  Weight: 15
 --- !u!136 &8350327392998030945
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -360,7 +363,6 @@ MonoBehaviour:
   - {fileID: 4557933577153995088}
   - {fileID: 1074006904453294890}
   - {fileID: 1074006904453294890}
-  IsController: 1
 --- !u!1 &2899238564132721140
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,6 +831,11 @@ PrefabInstance:
       propertyPath: Expulsion
       value: 31
       objectReference: {fileID: 0}
+    - target: {fileID: 7457721660306057778, guid: 711aec0a9ed9345429748e749df27d6d,
+        type: 3}
+      propertyPath: wallDamage
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 711aec0a9ed9345429748e749df27d6d, type: 3}
 --- !u!114 &4557933577153995088 stripped
@@ -1052,6 +1059,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: wallDamage
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874279208353165509, guid: d7c9358ad96af4e419069c0b8b40cee1,
+        type: 3}
+      propertyPath: Cd
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 925787943284743542, guid: d7c9358ad96af4e419069c0b8b40cee1,
         type: 3}

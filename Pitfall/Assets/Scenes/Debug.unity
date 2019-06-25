@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44769716, g: 0.49767518, b: 0.57539284, a: 1}
+  m_IndirectSpecularColor: {r: 0.44769675, g: 0.49767494, b: 0.57539135, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -412,7 +412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18ab4f1738371d478d3d74ae186db92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MagePrefab: {fileID: 1237152506359232125, guid: ba30238f2847cbe46ad92121114dce08,
+  KeyboardPlayer: 0
+  MagePrefab: {fileID: 7242816311818963723, guid: d49db9fc77017f74d9186a748592c3de,
     type: 3}
   KnightPrefab: {fileID: 7242816311818963723, guid: d49db9fc77017f74d9186a748592c3de,
     type: 3}
