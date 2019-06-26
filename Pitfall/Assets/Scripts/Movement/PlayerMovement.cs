@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 vInputDirection = Vector3.zero;
         vInputDirection.x = Input.GetAxis(HoriAxis);

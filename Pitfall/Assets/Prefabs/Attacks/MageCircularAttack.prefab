@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 0}
-  Damage: 12
+  Damage: 18
   Cd: 1
-  Expulsion: 25
+  Expulsion: 27
+  wallDamage: 20
   LaunchingSe: {fileID: 5599308999953372735}
   TouchingSe: {fileID: 9193670712039029126}
   HitBox: {fileID: 0}
@@ -62,7 +63,8 @@ AudioSource:
   m_GameObject: {fileID: 2470184303646593399}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: b21ce4f6bc66f0e4c844fc6c3ee28417, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -158,7 +160,8 @@ AudioSource:
   m_GameObject: {fileID: 2470184303646593399}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 7189d40051064d24f8d54dd56dbfb7f8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

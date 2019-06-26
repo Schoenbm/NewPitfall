@@ -1546,16 +1546,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2700625604236455858}
     m_Modifications:
-    - target: {fileID: 1743767516635400016, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: m_Name
-      value: TpAttack
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743767516635400016, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 9178992076497619089, guid: 2215bebdda9dac246bff8fc18682525f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1611,53 +1601,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1743767516635400016, guid: 2215bebdda9dac246bff8fc18682525f,
+        type: 3}
+      propertyPath: m_Name
+      value: TpAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
         type: 3}
       propertyPath: PlayerAnimator
       value: 
       objectReference: {fileID: 221337314294720772}
-    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: Cd
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1611449385607944219, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: wallDamage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003358079199219084, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.595
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003358079199219084, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 3003358079199219084, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
-        type: 2}
-    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942275908032669783, guid: 2215bebdda9dac246bff8fc18682525f,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2215bebdda9dac246bff8fc18682525f, type: 3}
 --- !u!4 &4373658461161821056 stripped
@@ -1685,11 +1638,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2700625604236455858}
     m_Modifications:
-    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: m_Name
-      value: FireBallAttack
-      objectReference: {fileID: 0}
     - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
       propertyPath: PlayerAnimator
@@ -1700,21 +1648,6 @@ PrefabInstance:
       propertyPath: Staff
       value: 
       objectReference: {fileID: 3702461720665791834}
-    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: damageCoef
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: expulsionCoef
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 8898809215752800521, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: wallDamage
-      value: 24
-      objectReference: {fileID: 0}
     - target: {fileID: 1436631998518252822, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1770,38 +1703,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6005720951798254965, guid: c2fd6cb7620ecc7458f71bc671427a95,
+    - target: {fileID: 5885266010101527362, guid: c2fd6cb7620ecc7458f71bc671427a95,
         type: 3}
-      propertyPath: m_Pitch
-      value: 1.54
+      propertyPath: m_Name
+      value: FireBallAttack
       objectReference: {fileID: 0}
-    - target: {fileID: 6005720951798254965, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.733
-      objectReference: {fileID: 0}
-    - target: {fileID: 6005720951798254965, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
-        type: 2}
-    - target: {fileID: 2056179165922277213, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 2056179165922277213, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.806
-      objectReference: {fileID: 0}
-    - target: {fileID: 2056179165922277213, guid: c2fd6cb7620ecc7458f71bc671427a95,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2fd6cb7620ecc7458f71bc671427a95, type: 3}
 --- !u!4 &4853774322634524633 stripped
@@ -1829,11 +1735,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2700625604236455858}
     m_Modifications:
-    - target: {fileID: 2470184303646593399, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: m_Name
-      value: MageCircularAttack
-      objectReference: {fileID: 0}
     - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}
       propertyPath: PlayerAnimator
@@ -1849,11 +1750,6 @@ PrefabInstance:
       propertyPath: FireBall
       value: 
       objectReference: {fileID: 3156188681363250118}
-    - target: {fileID: 5717626037762754542, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: wallDamage
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 5588013751255230835, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1909,18 +1805,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5599308999953372735, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
+    - target: {fileID: 2470184303646593399, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
         type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
-        type: 2}
-    - target: {fileID: 9193670712039029126, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
-        type: 2}
+      propertyPath: m_Name
+      value: MageCircularAttack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4bfae8025cc4fa4c9d5a61bdcdeda5e, type: 3}
 --- !u!114 &1445941296612139866 stripped

@@ -105,16 +105,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 0}
-  Damage: 20
-  Cd: 8
+  Damage: 25
+  Cd: 5
   Expulsion: 90
+  wallDamage: 200
   LaunchingSe: {fileID: 7955317657679328316}
   TouchingSe: {fileID: 4898316431077881244}
   HitBox: {fileID: 1572651605227558588}
-  DashTime: 0.9
-  DashPreparingTime: 0.4
-  DashSpeed: 2.8
-  exponentialFactor: 0.8
+  DashTime: 1
+  DashPreparingTime: 0.6
+  DashSpeed: 2.6
+  exponentialFactor: 0.5
   Player: {fileID: 0}
 --- !u!82 &4898316431077881244
 AudioSource:
@@ -125,7 +126,8 @@ AudioSource:
   m_GameObject: {fileID: 5896455818332966116}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 017bc41ac52c8ea408ee200536bf5d70, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -221,7 +223,8 @@ AudioSource:
   m_GameObject: {fileID: 5896455818332966116}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: dc778ede5d898744e86cbff5b1279f5e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

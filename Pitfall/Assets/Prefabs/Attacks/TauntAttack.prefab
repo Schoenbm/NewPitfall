@@ -47,14 +47,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 0}
   Damage: 0
-  Cd: 10
+  Cd: 4.5
   Expulsion: 0
+  wallDamage: 0
   LaunchingSe: {fileID: 1010394241572734351}
   TouchingSe: {fileID: 332023495837819029}
   HitBox: {fileID: 0}
   buffTime: 6
-  speedBonus: 0.15
-  weightBonus: 20
+  speedBonus: 0.2
+  weightBonus: 25
 --- !u!82 &332023495837819029
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64,7 +65,8 @@ AudioSource:
   m_GameObject: {fileID: 6096922748488702107}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 75cb57d7017744748a06cf6f9efe3dee, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -160,7 +162,8 @@ AudioSource:
   m_GameObject: {fileID: 6096922748488702107}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 2c67a4ffd1cac28458a9deedba7c65f2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

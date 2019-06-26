@@ -46,9 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 0}
-  Damage: 15
+  Damage: 18
   Cd: 3
-  Expulsion: 20
+  Expulsion: 22
+  wallDamage: 24
   LaunchingSe: {fileID: 2056179165922277213}
   TouchingSe: {fileID: 6005720951798254965}
   HitBox: {fileID: 0}
@@ -56,8 +57,8 @@ MonoBehaviour:
     type: 3}
   Staff: {fileID: 0}
   animationTime: 0.8
-  damageCoef: 5
-  expulsionCoef: 15
+  damageCoef: 8
+  expulsionCoef: 17
   speed: 30
   TotalTime: 3
 --- !u!82 &6005720951798254965
@@ -69,11 +70,12 @@ AudioSource:
   m_GameObject: {fileID: 5885266010101527362}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 87e0dc4fd0fb466459e896b4e56359c9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.733
+  m_Pitch: 1.54
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -165,11 +167,12 @@ AudioSource:
   m_GameObject: {fileID: 5885266010101527362}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 66b7732d072b7324597e20d80f1ca88c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 350f21bd12d59864ca9d40b77a6127c4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.806
+  m_Pitch: 0.78
   Loop: 0
   Mute: 0
   Spatialize: 0

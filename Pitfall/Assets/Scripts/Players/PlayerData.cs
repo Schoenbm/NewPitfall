@@ -29,6 +29,6 @@ public class PlayerData : MonoBehaviour
 
     public float getExpulsionCoef()
     {
-        return  2 + (Health / Weight);
+        return  3 + (Health / Weight);
     }
 }
